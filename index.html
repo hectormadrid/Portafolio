@@ -1,15 +1,114 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <link href="./output.css" rel="stylesheet">
-  </head>
-    <title>Portafolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .hidden-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .show-element { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-<body class="bg-gray-950">
-    <div class=" text-white contain-layout"> hola este es mi portafolio</div>
+<body class="bg-gradient-to-b from-green-100 to-blue-50 text-gray-800">
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white/80 sticky top-0 backdrop-blur z-50">
+    <h1 class="text-2xl font-bold">Mi Portafolio</h1>
+    <div class="flex gap-4">
+      <button id="themeToggle" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">🌙</button>
+    </div>
+  </header>
+
+<!-- Ajuste del Hero con altura más pequeña -->
+<section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4">
+  <!-- Cordillera -->
+  <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
+    <path fill="#4ade80" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
+  </svg>
+  <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-green-500">Tu Nombre</span></h2>
+  <p id="typingText" class="text-xl text-gray-700 hidden-element"></p>
+</section>
+  <!-- Proyectos -->
+  <section class="py-20 px-6 bg-gradient-to-b from-blue-50 to-yellow-50">
+    <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Proyectos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2">Proyecto 1</h4>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2">Proyecto 2</h4>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2">Proyecto 3</h4>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+    </div>
+  </section>
+<!-- NUEVA Sección de habilidades -->
+<section class="py-20 px-6 bg-gradient-to-b from-green-100 to-blue-50">
+  <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Habilidades</h3>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     
+    <!-- Tarjeta habilidad -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+      <img src="" alt="HTML" class="w-16 h-16 mb-4">
+      <h4 class="font-semibold text-lg mb-2">HTML</h4>
+      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+        <div class="bg-orange-500 h-4 progress-bar" data-progress="90"></div>
+      </div>
+      <span class="mt-2 text-sm text-gray-600">90%</span>
+    </div>
+
+    <!-- Tarjeta habilidad -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+      <img src="" alt="CSS" class="w-16 h-16 mb-4">
+      <h4 class="font-semibold text-lg mb-2">CSS</h4>
+      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+        <div class="bg-blue-500 h-4 progress-bar" data-progress="85"></div>
+      </div>
+      <span class="mt-2 text-sm text-gray-600">85%</span>
+    </div>
+
+    <!-- Tarjeta habilidad -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+      <img src="" alt="JavaScript" class="w-16 h-16 mb-4">
+      <h4 class="font-semibold text-lg mb-2">JavaScript</h4>
+      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+        <div class="bg-yellow-400 h-4 progress-bar" data-progress="80"></div>
+      </div>
+      <span class="mt-2 text-sm text-gray-600">80%</span>
+    </div>
+
+  </div>
+</section>
+  <!-- Contacto -->
+  <section class="py-20 px-6 bg-gradient-to-b from-yellow-50 to-green-100">
+    <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Contacto</h3>
+    <form id="contactForm" class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg hidden-element">
+      <input type="text" name="name" placeholder="Tu nombre" class="w-full mb-4 p-3 border rounded" required>
+      <input type="email" name="email" placeholder="Tu email" class="w-full mb-4 p-3 border rounded" required>
+      <textarea name="message" placeholder="Tu mensaje" rows="5" class="w-full mb-4 p-3 border rounded" required></textarea>
+      <button type="submit" class="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600 transition">Enviar</button>
+      <p id="formMsg" class="mt-4 text-center"></p>
+    </form>
+  </section>
+
+  <footer class="py-6 text-center bg-green-500 text-white">
+    &copy; 2025 Mi Portafolio
+  </footer>
+
+<script src="js/scrollAnimations.js"></script>
+<script src="js/progressBars.js"></script>
+<script src="js/typingEffect.js"></script>
+<script src="js/themeToggle.js"></script>
+<script src="js/contactForm.js"></script>
+
+
 </body>
-</html> 
+</html>
