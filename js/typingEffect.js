@@ -1,5 +1,6 @@
 // Efecto de escritura en el Hero
-const text = "Desarrollador Web | Diseñador | Creativo";
+export function initTypingEffect(){
+  const text = "Ingeniero Informatico";
 let i = 0;
 
 function typing() {
@@ -10,3 +11,5 @@ function typing() {
   }
 }
 typing();
+
+}

@@ -1,10 +1,9 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
+  <title>Mi Portafolio - Tema Oscuro</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -13,104 +12,92 @@
     .show-element { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="bg-gradient-to-b from-green-100 to-blue-50 text-gray-800">
+<body class="bg-[#1e1e2f] text-[#e0e0e0]">
+  
   <!-- Header -->
-  <header class="flex justify-between items-center px-6 py-4 bg-white/80 sticky top-0 backdrop-blur z-50">
-    <h1 class="text-2xl font-bold">Mi Portafolio</h1>
-    <div class="flex gap-4">
-      <button id="themeToggle" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">🌙</button>
-    </div>
+  <header class="flex justify-between items-center px-6 py-4 bg-[#252538] sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-[#6cc644]">Mi Portafolio</h1>
   </header>
 
-<!-- Ajuste del Hero con altura más pequeña -->
-<section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4">
-  <!-- Cordillera -->
-  <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
-    <path fill="#4ade80" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
-  </svg>
-  <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-green-500">Tu Nombre</span></h2>
-  <p id="typingText" class="text-xl text-gray-700 hidden-element"></p>
-</section>
-  <!-- Proyectos -->
-  <section class="py-20 px-6 bg-gradient-to-b from-blue-50 to-yellow-50">
-    <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Proyectos</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2">Proyecto 1</h4>
-        <p>Descripción breve del proyecto.</p>
+  <!-- Hero -->
+  <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
+    <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
+      <path fill="#4b6f4b" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
+    </svg>
+    <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-[#6cc644]">Tu Nombre</span></h2>
+    <p id="typingText" class="text-xl text-[#b0b0b0] hidden-element"></p>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="py-20 px-6 bg-[#252538]">
+    <h3 class="text-3xl font-bold mb-10 text-center text-[#4a90e2] hidden-element">Habilidades</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+        <img src="images/html.png" alt="HTML" class="w-16 h-16 mb-4">
+        <h4 class="font-semibold text-lg mb-2 text-[#f39c12]">HTML</h4>
+        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+          <div class="bg-[#f39c12] h-4 progress-bar" data-progress="90"></div>
+        </div>
+        <span class="mt-2 text-sm text-gray-400">90%</span>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2">Proyecto 2</h4>
-        <p>Descripción breve del proyecto.</p>
+
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+        <img src="images/css.png" alt="CSS" class="w-16 h-16 mb-4">
+        <h4 class="font-semibold text-lg mb-2 text-[#4a90e2]">CSS</h4>
+        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+          <div class="bg-[#4a90e2] h-4 progress-bar" data-progress="85"></div>
+        </div>
+        <span class="mt-2 text-sm text-gray-400">85%</span>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2">Proyecto 3</h4>
-        <p>Descripción breve del proyecto.</p>
+
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
+        <img src="images/javascript.png" alt="JavaScript" class="w-16 h-16 mb-4">
+        <h4 class="font-semibold text-lg mb-2 text-[#e6c229]">JavaScript</h4>
+        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+          <div class="bg-[#e6c229] h-4 progress-bar" data-progress="80"></div>
+        </div>
+        <span class="mt-2 text-sm text-gray-400">80%</span>
       </div>
     </div>
   </section>
-<!-- NUEVA Sección de habilidades -->
-<section class="py-20 px-6 bg-gradient-to-b from-green-100 to-blue-50">
-  <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Habilidades</h3>
-  
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    
-    <!-- Tarjeta habilidad -->
-    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
-      <img src="" alt="HTML" class="w-16 h-16 mb-4">
-      <h4 class="font-semibold text-lg mb-2">HTML</h4>
-      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-        <div class="bg-orange-500 h-4 progress-bar" data-progress="90"></div>
-      </div>
-      <span class="mt-2 text-sm text-gray-600">90%</span>
-    </div>
 
-    <!-- Tarjeta habilidad -->
-    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
-      <img src="" alt="CSS" class="w-16 h-16 mb-4">
-      <h4 class="font-semibold text-lg mb-2">CSS</h4>
-      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-        <div class="bg-blue-500 h-4 progress-bar" data-progress="85"></div>
+  <!-- Proyectos -->
+  <section class="py-20 px-6 bg-[#1e1e2f]">
+    <h3 class="text-3xl font-bold mb-10 text-center text-[#6cc644] hidden-element">Proyectos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2 text-[#4a90e2]">Proyecto 1</h4>
+        <p class="text-[#b0b0b0]">Descripción breve del proyecto.</p>
       </div>
-      <span class="mt-2 text-sm text-gray-600">85%</span>
-    </div>
-
-    <!-- Tarjeta habilidad -->
-    <div class="bg-white p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
-      <img src="" alt="JavaScript" class="w-16 h-16 mb-4">
-      <h4 class="font-semibold text-lg mb-2">JavaScript</h4>
-      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-        <div class="bg-yellow-400 h-4 progress-bar" data-progress="80"></div>
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2 text-[#f39c12]">Proyecto 2</h4>
+        <p class="text-[#b0b0b0]">Descripción breve del proyecto.</p>
       </div>
-      <span class="mt-2 text-sm text-gray-600">80%</span>
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
+        <h4 class="font-semibold text-lg mb-2 text-[#e6c229]">Proyecto 3</h4>
+        <p class="text-[#b0b0b0]">Descripción breve del proyecto.</p>
+      </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Contacto -->
-  <section class="py-20 px-6 bg-gradient-to-b from-yellow-50 to-green-100">
-    <h3 class="text-3xl font-bold mb-10 text-center hidden-element">Contacto</h3>
-    <form id="contactForm" class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg hidden-element">
-      <input type="text" name="name" placeholder="Tu nombre" class="w-full mb-4 p-3 border rounded" required>
-      <input type="email" name="email" placeholder="Tu email" class="w-full mb-4 p-3 border rounded" required>
-      <textarea name="message" placeholder="Tu mensaje" rows="5" class="w-full mb-4 p-3 border rounded" required></textarea>
-      <button type="submit" class="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600 transition">Enviar</button>
+  <section class="py-20 px-6 bg-[#252538]">
+    <h3 class="text-3xl font-bold mb-10 text-center text-[#4a90e2] hidden-element">Contacto</h3>
+    <form id="contactForm" class="max-w-lg mx-auto bg-[#2d2d44] p-8 rounded-xl shadow-lg hidden-element">
+      <input type="text" name="name" placeholder="Tu nombre" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required>
+      <input type="email" name="email" placeholder="Tu email" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required>
+      <textarea name="message" placeholder="Tu mensaje" rows="5" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required></textarea>
+      <button type="submit" class="w-full py-3 bg-[#6cc644] text-white rounded hover:bg-[#5ba53b] transition">Enviar</button>
       <p id="formMsg" class="mt-4 text-center"></p>
     </form>
   </section>
 
-  <footer class="py-6 text-center bg-green-500 text-white">
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-[#1e1e2f] text-gray-400">
     &copy; 2025 Mi Portafolio
   </footer>
 
-<script src="js/scrollAnimations.js"></script>
-<script src="js/progessBar.js"></script>
-<script src="js/typingEffect.js"></script>
-<script src="js/themeToggles.js"></script>
-<script src="js/contactForm.js"></script>
-
-
-
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

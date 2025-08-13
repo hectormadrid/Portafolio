@@ -1,5 +1,5 @@
-// Animaciones de scroll
-const elements = document.querySelectorAll('.hidden-element');
+export function initScrollAnimations(){
+  const elements = document.querySelectorAll('.hidden-element');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -8,3 +8,4 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.2 });
 elements.forEach(el => observer.observe(el));
+}

@@ -1,3 +1,4 @@
+export function initProgressBars() {
   const progressBars = document.querySelectorAll('.progress-bar');
   const progressObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -10,7 +11,9 @@
       }
     });
   }, { threshold: 0.5 });
+
   progressBars.forEach(bar => {
-    bar.style.width = '0%'; // Inicial
+    bar.style.width = '0%';
     progressObserver.observe(bar);
   });
+}

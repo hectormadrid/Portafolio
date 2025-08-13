@@ -1,4 +1,5 @@
 // Validación del formulario de contacto
+export function initcontactFrom() {
 document.getElementById("contactForm")?.addEventListener("submit", e => {
   e.preventDefault();
   
@@ -16,3 +17,5 @@ document.getElementById("contactForm")?.addEventListener("submit", e => {
   msgEl.className = "text-green-500";
   e.target.reset();
 });
+
+}
