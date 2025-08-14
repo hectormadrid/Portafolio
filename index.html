@@ -22,15 +22,46 @@
 
   <!-- Hero -->
   <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
-     <div class="flex-shrink-0">
-      <img src="img/Captura de pantalla 2025-08-13 135037.png" alt="Tu nombre" class="w-48 h-48 object-cover rounded-full border-4 border-[#4a90e2] shadow-lg">
-    </div>
+    
     <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
       <path fill="#4b6f4b" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
     </svg>
     <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-[#6cc644]">Héctor Fernando Madrid Flores</span></h2>
     <p id="typingText" class="text-xl text-[#b0b0b0] hidden-element"></p>
   </section>
+<section class="py-20 px-6 bg-[#1e1e2f] relative overflow-hidden">
+  
+  <!-- Fondo textura -->
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-20"></div>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10 animate-fadeIn">
+    
+    <!-- Foto -->
+    <div class="flex justify-center animate-slideInLeft">
+      <img src="img/Captura de pantalla 2025-08-13 135037.png" alt="Foto personal" class="rounded-2xl shadow-lg border-4 border-[#4a90e2] w-72 h-72 object-cover">
+    </div>
+
+    <!-- Texto -->
+    <div class="animate-slideInRight">
+      <h2 class="text-4xl font-bold text-[#4a90e2] mb-6">Sobre mí</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Soy un profesional apasionado por la tecnología y el desarrollo web, siempre en busca de aprender y mejorar mis habilidades. 
+        Me encanta trabajar en equipo, afrontar nuevos desafíos y encontrar soluciones creativas a los problemas.
+      </p>
+      <ul class="space-y-2 text-gray-300">
+        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Trabajo en equipo</li>
+        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Responsable y organizado</li>
+        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Apasionado por los desafíos</li>
+        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Enfoque en la mejora continua</li>
+      </ul>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Importar animaciones -->
+<link rel="stylesheet" href="animation.css">
+
 
   <!-- Habilidades -->
   <section class="py-20 px-6 bg-[#252538]">
@@ -131,7 +162,9 @@
         <p class="text-[#b0b0b0]">Startup Innovate - Apoyo en desarrollo web y optimización de SEO.</p>
       </div>
     </div>
+    
   </div>
+  
 </section>
 
 
@@ -155,16 +188,37 @@
   </section>
 
   <!-- Contacto -->
-  <section class="py-20 px-6 bg-[#1e1e2f]">
-    <h3 class="text-3xl font-bold mb-10 text-center text-[#4a90e2] hidden-element">Contacto</h3>
-    <form id="contactForm" class="max-w-lg mx-auto bg-[#2d2d44] p-8 rounded-xl shadow-lg hidden-element">
-      <input type="text" name="name" placeholder="Tu nombre" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required>
-      <input type="email" name="email" placeholder="Tu email" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required>
-      <textarea name="message" placeholder="Tu mensaje" rows="5" class="w-full mb-4 p-3 bg-[#1e1e2f] border border-gray-600 rounded text-white" required></textarea>
-      <button type="submit" class="w-full py-3 bg-[#6cc644] text-white rounded hover:bg-[#5ba53b] transition">Enviar</button>
-      <p id="formMsg" class="mt-4 text-center"></p>
-    </form>
-  </section>
+<section class="py-20 px-6 relative" style="background: linear-gradient(135deg, #1a1a2e, #16213e); background-image: url('img/pattern-dark.svg'); background-size: cover; background-blend-mode: overlay;">
+  <div class="max-w-4xl mx-auto text-center animate-fadeIn">
+    <h2 class="text-4xl font-bold text-[#4a90e2] mb-12">Contacto</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Teléfono -->
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInLeft">
+        <div class="bg-[#4a90e2] p-4 rounded-full mb-4">📱</div>
+        <h4 class="text-lg font-semibold text-white">Teléfono</h4>
+        <p class="text-gray-400">+34 600 000 000</p>
+      </div>
+      
+      <!-- Correo -->
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInUp">
+        <div class="bg-[#4a90e2] p-4 rounded-full mb-4">📧</div>
+        <h4 class="text-lg font-semibold text-white">Correo</h4>
+        <p class="text-gray-400">tuemail@example.com</p>
+      </div>
+      
+      <!-- GitHub -->
+      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInRight">
+        <div class="bg-[#4a90e2] p-4 rounded-full mb-4">💻</div>
+        <h4 class="text-lg font-semibold text-white">GitHub</h4>
+        <a href="https://github.com/tuusuario" target="_blank" class="text-[#4a90e2] hover:underline">github.com/tuusuario</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <footer class="py-6 text-center bg-[#252538] text-gray-400">
