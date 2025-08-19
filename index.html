@@ -7,6 +7,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/menu.css">
+ 
+  <link rel="stylesheet" href="css/animation.css">
   <style>
     body { font-family: 'Poppins', sans-serif; }
     .hidden-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -14,28 +17,73 @@
   </style>
 </head>
 <body class="bg-[#1e1e2f] text-[#e0e0e0]">
-  
-  <!-- Header -->
-  <header class="flex justify-between items-center px-6 py-4 bg-[#252538] sticky top-0 z-50">
+
+<!-- Header -->
+<header class="bg-[#252538] sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
     <h1 class="text-2xl font-bold text-[#6cc644]">Mi Portafolio</h1>
-  </header>
+
+    <!-- Botón hamburguesa -->
+    <button
+      id="menu-toggle"
+      class="md:hidden text-gray-300 focus:outline-none"
+      aria-label="Abrir menú"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      type="button">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Menú de navegación  -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#inicio" class="text-gray-300 hover:text-[#6cc644] transition">Inicio</a>
+      <a href="#sobre-mi" class="text-gray-300 hover:text-[#6cc644] transition">Sobre mí</a>
+      <a href="#habilidades" class="text-gray-300 hover:text-[#6cc644] transition">Habilidades</a>
+      <a href="#experiencia" class="text-gray-300 hover:text-[#6cc644] transition">Experiencia</a>
+      <a href="#proyectos" class="text-gray-300 hover:text-[#6cc644] transition">Proyectos</a>
+      <a href="#certificados" class="text-gray-300 hover:text-[#6cc644] transition">Certificados</a>
+      <a href="#contacto" class="text-gray-300 hover:text-[#6cc644] transition">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Menú móvil  -->
+  <nav
+    id="mobile-menu"
+    class="md:hidden hidden bg-[#252538] px-6 pb-2 space-y-2 absolute w-full top-full left-0"
+    aria-hidden="true"
+    style="height: 0; overflow: hidden;"
+  >
+    <a href="#inicio" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Inicio</a>
+    <a href="#sobre-mi" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Sobre mí</a>
+    <a href="#habilidades" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Habilidades</a>
+    <a href="#experiencia" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Experiencia</a>
+    <a href="#proyectos" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Proyectos</a>
+    <a href="#certificados" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Certificados</a>
+    <a href="#contacto" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Contacto</a>
+  </nav>
+</header>
 
   <!-- Hero -->
-  <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
-    
+<section id="inicio" class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
     <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
       <path fill="#4b6f4b" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
     </svg>
     <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-[#6cc644]">Héctor Fernando Madrid Flores</span></h2>
     <p id="typingText" class="text-xl text-[#b0b0b0] hidden-element"></p>
-  </section>
-<section class="py-20 px-6 bg-[#1e1e2f] relative overflow-hidden">
-  
+</section>
+
+<section id="sobre-mi"  class="py-20 px-6 bg-[#1e1e2f] relative overflow-hidden">
+
   <!-- Fondo textura -->
   <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-20"></div>
 
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10 animate-fadeIn">
-    
+
     <!-- Foto -->
     <div class="flex justify-center animate-slideInLeft">
       <img src="img/Captura de pantalla 2025-08-13 135037.png" alt="Foto personal" class="rounded-2xl shadow-lg border-4 border-[#4a90e2] w-72 h-72 object-cover">
@@ -45,7 +93,7 @@
     <div class="animate-slideInRight">
       <h2 class="text-4xl font-bold text-[#4a90e2] mb-6">Sobre mí</h2>
       <p class="text-gray-300 leading-relaxed mb-4">
-        Soy un profesional apasionado por la tecnología y el desarrollo web, siempre en busca de aprender y mejorar mis habilidades. 
+        Soy un profesional apasionado por la tecnología y el desarrollo web, siempre en busca de aprender y mejorar mis habilidades.
         Me encanta trabajar en equipo, afrontar nuevos desafíos y encontrar soluciones creativas a los problemas.
       </p>
       <ul class="space-y-2 text-gray-300">
@@ -55,16 +103,15 @@
         <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Enfoque en la mejora continua</li>
       </ul>
     </div>
-    
+
   </div>
 </section>
 
-<!-- Importar animaciones -->
-<link rel="stylesheet" href="animation.css">
+
 
 
   <!-- Habilidades -->
-  <section class="py-20 px-6 bg-[#252538]">
+  <section id="habilidades" class="py-20 px-6 bg-[#252538]">
     <h3 class="text-3xl font-bold mb-10 text-center text-[#4a90e2] hidden-element">Habilidades</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hidden-element flex flex-col items-center">
@@ -120,7 +167,7 @@
     </div>
   </section>
 <!-- Experiencia Laboral -->
-<section class="py-20 px-6 bg-[#1e1e2f]">
+<section id="experiencia" class="py-20 px-6 bg-[#1e1e2f]">
   <h3 class="text-3xl font-bold mb-10 text-center text-[#6cc644] hidden-element">Experiencia Laboral</h3>
 
   <div class="max-w-4xl mx-auto relative">
@@ -157,82 +204,71 @@
       </div>
     </div>
 
-    
+
   </div>
-  
+
 </section>
 
 
   <!-- Proyectos -->
-  <section class="py-20 px-6 bg-[#252538]">
-    <h3 class="text-3xl font-bold mb-10 text-center text-[#6cc644] hidden-element">Proyectos</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2 text-[#4a90e2]">Recordatorio de horas Medicas</h4>
-        <p class="text-[#b0b0b0]">Un sistema de recordatorio via whatsaap para los pacientes de un cesfam y/o hospital</p>
-      </div>
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2 text-[#f39c12]">Mundo Libreria</h4>
-        <p class="text-[#b0b0b0]">Pagina web para una libreria </p>
-      </div>
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element">
-        <h4 class="font-semibold text-lg mb-2 text-[#e6c229]">Proyecto 3</h4>
-        <p class="text-[#b0b0b0]">Descripción breve del proyecto.</p>
-      </div>
+  <section id="proyectos" class="py-20 px-6 bg-[#252538]">
+  <h3 class="text-3xl font-bold mb-10 text-center text-[#6cc644] hidden-element">Proyectos</h3>
+  <div class="flex flex-wrap justify-center gap-8">
+    <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element flex-1 max-w-sm min-w-[280px]">
+      <h4 class="font-semibold text-lg mb-2 text-[#4a90e2]">Recordatorio de horas Médicas</h4>
+      <p class="text-[#b0b0b0]">Un sistema de recordatorio vía WhatsApp para los pacientes de un CESFAM y/o hospital.</p>
     </div>
-  </section>
-<section class="py-20 px-6 bg-[#1a1a2e] relative">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-[#4a90e2] mb-12 hidden-element">Certificados</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Certificado 1 -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform duration-300 hidden-element">
-        <img src="img/Certificado MySQL.jpg" alt="Certificado 1" class="w-20 h-20 mb-4">
-        <h4 class="text-lg font-semibold text-white">Curso de Mysql</h4>
-        <p class="text-gray-400 text-sm mb-2">Udemy· 2025</p>
-        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-ef74ddb2-634c-48c4-aa08-572379421141.jpg" target="_blank" class="text-[#4a90e2] hover:underline">Ver certificado</a>
-      </div>
-
-      <!-- Certificado 2 -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform duration-300 hidden-element">
-        <img src="img/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg" alt="Certificado 2" class="w-20 h-20 mb-4">
-        <h4 class="text-lg font-semibold text-white">JavaScript Avanzado</h4>
-        <p class="text-gray-400 text-sm mb-2">Udemy · 2025</p>
-        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg" target="_blank" class="text-[#4a90e2] hover:underline">Ver certificado</a>
-      </div>
-
-      <!-- Certificado 3 -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform duration-300 hidden-element">
-        <!-- <img src="" alt="" class="w-20 h-20 mb-4"> -->
-        <h4 class="text-lg font-semibold text-white">--------</h4>
-        <p class="text-gray-400 text-sm mb-2">--------</p>
-        <a href="link-certificado3.pdf" target="_blank" class="text-[#4a90e2] hover:underline">Ver certificado</a>
-      </div>
+    <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-xl transition hidden-element flex-1 max-w-sm min-w-[280px]">
+      <h4 class="font-semibold text-lg mb-2 text-[#f39c12]">Mundo Librería</h4>
+      <p class="text-[#b0b0b0]">Página web para una librería donde se pueden ver los productos  disponibles, se puede comprar y el administrador puede gestionar sus productos .</p>
     </div>
   </div>
 </section>
+  <!-- Certificados-->
+  <section id="certificados" class="py-20 px-6 bg-[#1a1a2e] relative">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-[#4a90e2] mb-12 hidden-element">Certificados</h2>
+        <div class= "flex flex-wrap justify-center gap-8">
+          <!-- Certificado 1 -->
+          <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform duration-300 hidden-element w-72">
+            <img src="img/Certificado MySQL.jpg" alt="Certificado 1" class="w-20 h-20 mb-4">
+            <h4 class="text-lg font-semibold text-white">Curso de Mysql</h4>
+            <p class="text-gray-400 text-sm mb-2">Udemy· 2025</p>
+            <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-ef74ddb2-634c-48c4-aa08-572379421141.jpg" target="_blank" class="text-[#4a90e2] hover:underline">Ver certificado</a>
+          </div>
+          <!-- Certificado 2 -->
+          <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform duration-300 hidden-element w-72">
+            <img src="img/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg" alt="Certificado 2" class="w-20 h-20 mb-4">
+            <h4 class="text-lg font-semibold text-white"> Curso  JavaScript</h4>
+            <p class="text-gray-400 text-sm mb-2">Udemy · 2025</p>
+           <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg" target="_blank" class="text-[#4a90e2] hover:underline">Ver certificado</a>
+         </div>
+
+         
+      </div>
+    </div>
+  </section>
 
   <!-- Contacto -->
-<section class="py-20 px-6 relative" style="background: linear-gradient(135deg, #1a1a2e, #16213e); background-image: url('img/pattern-dark.svg'); background-size: cover; background-blend-mode: overlay;">
+<section id="contacto" class="py-20 px-6 relative" style="background: linear-gradient(135deg, #1a1a2e, #16213e);  background-size: cover; background-blend-mode: overlay;">
   <div class="max-w-4xl mx-auto text-center animate-fadeIn">
     <h2 class="text-4xl font-bold text-[#4a90e2] mb-12">Contacto</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
+
       <!-- Teléfono -->
       <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInLeft">
         <img src="img/social.png" alt="wsp" class="w-16 h-16 mb-4">
         <h4 class="text-lg font-semibold text-white">Teléfono</h4>
         <p class="text-gray-400">+569 81736629</p>
       </div>
-      
+
       <!-- Correo -->
       <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInUp">
         <img src="img/gmail.png" alt="Gmail" class="w-16 h-16 mb-4">
         <h4 class="text-lg font-semibold text-white">Correo</h4>
         <p class="text-gray-400">hectorfmf2002@gmail.com</p>
       </div>
-      
+
       <!-- GitHub -->
       <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg flex flex-col items-center animate-slideInRight">
          <img src="img/github.png" alt="Github" class="w-16 h-16 mb-4">
@@ -245,7 +281,7 @@
 </section>
   <!-- Footer -->
   <footer class="py-6 text-center bg-[#252538] text-gray-400">
-    &copy; 2025 Mi Portafolio
+    &copy; 2025 Mi Portafolio todos los derechos reservados. | Diseñado por Héctor Fernando Madrid Flores
   </footer>
 
   <!-- Scripts -->

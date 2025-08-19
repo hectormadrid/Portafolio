@@ -50,3 +50,18 @@
 .animate-slideInLeft { animation: slideInLeft 1s ease forwards; }
 .animate-slideInRight { animation: slideInRight 1s ease forwards; }
 .animate-slideInUp { animation: slideInUp 1s ease forwards; }
+
+.hidden-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.show-element {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
