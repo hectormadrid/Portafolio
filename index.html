@@ -66,49 +66,52 @@
     <a href="#certificados" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Certificados</a>
     <a href="#contacto" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Contacto</a>
   </nav>
-</header>
+  </header>
 
   <!-- Hero -->
-<section id="inicio" class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
+  <section id="inicio" class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 bg-[#1e1e2f]">
     <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
       <path fill="#4b6f4b" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
     </svg>
     <h2 class="text-5xl font-extrabold mb-4 hidden-element">Hola, soy <span class="text-[#6cc644]">Héctor Fernando Madrid Flores</span></h2>
     <p id="typingText" class="text-xl text-[#b0b0b0] hidden-element"></p>
-</section>
+  </section>
 
-<section id="sobre-mi"  class="py-20 px-6 bg-[#1e1e2f] relative overflow-hidden">
+ <section class="py-20 px-6 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.1) 1px, transparent 0); background-size: 40px 40px;">
+    
+    <!-- Formas geométricas -->
+    <div class="absolute top-16 left-16 w-20 h-20 border-4 border-blue-400/20 rounded-full animate-spin"></div>
+    <div class="absolute bottom-16 right-16 w-28 h-28 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-lg rotate-12"></div>
+    <div class="absolute top-1/3 right-1/3 w-12 h-12 bg-green-400/20 rounded-full animate-bounce"></div>
+    
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+      
+      <!-- Foto -->
+      <div class="flex justify-center">
+        <img src="img/Captura de pantalla 2025-08-13 135037.png" class="rounded-2xl shadow-2xl border-4 border-blue-400 h-72 bg-gradient-to-tr from-slate-700 to-slate-600 flex items-center justify-center text-blue-400 text-6xl hover:border-green-400 hover:text-green-400 transition-all duration-500 w-72 object-cover">
+          
+        </img>
+      </div>
 
-  <!-- Fondo textura -->
-  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-20"></div>
-
-  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10 animate-fadeIn">
-
-    <!-- Foto -->
-    <div class="flex justify-center animate-slideInLeft">
-      <img src="img/Captura de pantalla 2025-08-13 135037.png" alt="Foto personal" class="rounded-2xl shadow-lg border-4 border-[#4a90e2] w-72 h-72 object-cover">
+      <!-- Texto -->
+      <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-l-4 border-green-400 shadow-2xl hover:shadow-green-400/20 transition-all duration-300">
+        <h2 class="text-4xl font-bold text-blue-400 mb-6">Sobre mí</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Ingeniero informático titulado con poca experiencia laboral pero tengo experiencia desarrollando proyecto pequeños, con ganas de generar 
+          experiencia en las  distintas áreas de la Informatica, tengo conocimiento de la programación y sus distintas 
+          tecnologías, motivación para seguir aprendiendo con desafíos que aporten al crecimiento 
+          laboral y mental, capacidad para trabajar en equipo, buena comunicación y 
+          comprometido con los objetivos y trabajos
+        </p>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Trabajo en equipo</li>
+          <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Responsable, organizado y puntual</li>
+          <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Apasionado por aprender nuevas tecnologías</li>
+          <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Enfoque en la mejora continua</li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Texto -->
-    <div class="animate-slideInRight">
-      <h2 class="text-4xl font-bold text-[#4a90e2] mb-6">Sobre mí</h2>
-      <p class="text-gray-300 leading-relaxed mb-4">
-        Soy un profesional apasionado por la tecnología y el desarrollo web, siempre en busca de aprender y mejorar mis habilidades.
-        Me encanta trabajar en equipo, afrontar nuevos desafíos y encontrar soluciones creativas a los problemas.
-      </p>
-      <ul class="space-y-2 text-gray-300">
-        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Trabajo en equipo</li>
-        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Responsable, organizado y puntual</li>
-        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Apasionado por aprender nuevas tecnologias </li>
-        <li class="flex items-center"><span class="text-green-400 text-xl mr-2">✔</span> Enfoque en la mejora continua</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
-
+  </section>
 
   <!-- Habilidades -->
   <section id="habilidades" class="py-20 px-6 bg-[#252538]">
@@ -188,7 +191,6 @@
         <p class="text-[#b0b0b0]">● Administración de Red Wifi corporativa con equipos gestionados mediante controlador Unifi.</p>
         <p class="text-[#b0b0b0]">● Brindar apoyo en incidencias informáticas en línea de producción de Cerezas como  configuración de impresoras IP térmicas y diagnóstico de problemas de red.</p>
         <p class="text-[#b0b0b0]">● Controlar inventario de equipos TI en la empresa (Computadores, Impresoras, Tablet,  suministros, monitores, equipos de red y PDA)</p>
-
       </div>
     </div>
 
@@ -203,11 +205,45 @@
         <p class="text-[#b0b0b0]">Cesfam Codegua - Soporte de usuario y Desarrollador de Sistema Recordatorio de pacientes</p>
       </div>
     </div>
-
-
   </div>
-
 </section>
+
+<section id="academicos" class="py-20 px-6 bg-[#1a1a2e]">
+  <h3 class="text-3xl font-bold mb-12 text-center text-[#6cc644] hidden-element">
+    Antecedentes Académicos
+  </h3>
+
+  <div class="relative max-w-5xl mx-auto">
+    <!-- Línea horizontal -->
+    <div class="hidden md:block absolute top-6 left-0 w-full h-1 bg-gray-700"></div>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      <!-- Item 1 -->
+      <div class="relative flex flex-col items-center text-center hidden-element">
+        <img src="img/comercial.jpg" class="w-12 h-12 flex items-center justify-center bg-[#6cc644] text-white text-2xl rounded-full z-10">
+          
+        </img>
+        <div class="mt-4 bg-[#2d2d44] p-6 rounded-xl shadow-lg">
+          <span class="text-sm text-gray-400">2016-2019</span>
+          <h4 class="text-lg font-semibold text-white">Especialidad Egresada: Programación</h4>
+          <p class="text-gray-400">Liceo Bicentenario Comercial Diego Portales de Rancagua</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="relative flex flex-col items-center text-center hidden-element">
+        <img src="img/santo-tomas.jpg" class="w-12 h-12 flex items-center justify-center bg-[#6cc644] text-white text-2xl rounded-full z-10">
+          
+        </img>
+        <div class="mt-4 bg-[#2d2d44] p-6 rounded-xl shadow-lg">
+          <span class="text-sm text-gray-400">2020-2024</span>
+          <h4 class="text-lg font-semibold text-white">Carrera Egresada: Ingeniería en Informática</h4>
+          <p class="text-gray-400">Instituto Santo Tomas </p>
+        </div>
+      </div>
+  </div>
+</section>
+
 
 
   <!-- Proyectos -->
