@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio </title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="img/favicon.ico">
-  <link rel="stylesheet" href="css/menu.css">
- 
-  <link rel="stylesheet" href="css/animation.css">
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mi Portafolio </title>
+ <link rel="stylesheet" href="src/output.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="img/favicon.ico">
+<link rel="stylesheet" href="css/menu.css">
+
+<link rel="stylesheet" href="css/animation.css">
+<style>
     body { font-family: 'Poppins', sans-serif; }
     .hidden-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .show-element { opacity: 1; transform: translateY(0); }
-  </style>
+</style>
 </head>
-<body class="bg-[#1e1e2f] text-[#e0e0e0] ">
+<body class="bg-[#1e1e2f] text-[#e0e0e0] ">                
 
 <!-- Header -->
 <header class="bg-[#252538] sticky top-0 z-50 shadow-md">
@@ -482,7 +482,7 @@
                                     <span class="text-sm text-gray-300">Desarrollo de Lógica</span>
                                 </div>
                                 <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                  <span class="text-green-400 mr-2">🗄️</span>
+                                <span class="text-green-400 mr-2">🗄️</span>
                                     <span class="text-sm text-gray-300">Bases de Datos</span>
                                 </div>
                             </div>
@@ -492,7 +492,7 @@
                     <!-- Educación Superior -->
                     <div class="relative flex flex-col items-center text-center group">
                         <!-- Punto de conexión -->
-                         <img src="img/santo-tomas.jpg" class="w-16 h-16 bg-gradient-to-tr from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl z-10 group-hover:scale-110 transition-all duration-300 pulse-glow">
+                        <img src="img/santo-tomas.jpg" class="w-16 h-16 bg-gradient-to-tr from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl z-10 group-hover:scale-110 transition-all duration-300 pulse-glow">
                             
                         </img>
                         
@@ -518,7 +518,6 @@
                                     <span class="text-blue-400 mr-2">📊</span>
                                     <span class="text-sm text-gray-300">Metodologias</span>
                                 </div>
-                               
                                 <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
                                     <span class="text-blue-400 mr-2">🚀</span>
                                     <span class="text-sm text-gray-300">Proyectos Integrales</span>
@@ -748,119 +747,148 @@
         </div>
     </section>
 <!-- Servicios -->
-  <section id="servicios" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(72, 140, 218, 0.1) 1px, transparent 0); background-size: 40px 40px;">
+<section id="servicios" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(72, 140, 218, 0.1) 1px, transparent 0); background-size: 40px 40px;">
     <div class="max-w-6xl mx-auto">
-         <div class="absolute top-20 left-20 w-24 h-24 border-4 border-blue-400/20 rounded-lg rotate-45 animate-pulse"></div>
+        <div class="absolute top-20 left-20 w-24 h-24 border-4 border-blue-400/20 rounded-lg rotate-45 animate-pulse"></div>
         <div class="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full float-animation"></div>
         <div class="absolute bottom-1/4 left-1/12 w-16 h-16 border-2 border-green-400/30 rounded-lg rotate-45 animate-pulse"></div>
         <div class="absolute bottom-1/3 right-1/2 w-12 h-12 border-2 border-green-400/30 rounded-full animate-spin" style="animation-duration: 4s;"></div>
         <div class="absolute top-1/4 right-1/4 w-10 h-10 bg-purple-400/20 rounded-lg rotate-45 animate-pulse"></div>
-      
-      <h2 class="text-4xl font-bold text-center text-[#6cc644] mb-16">Servicios </h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <h2 class="text-4xl font-bold text-center text-[#6cc644] mb-16">Servicios </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-blue-400">
-          <div class="text-4xl mb-4">💻</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Formateo y Instalación</h3>
-          <p class="text-gray-300 mb-4">Reinstalación completa del sistema operativo con todos los drivers y programas necesarios.</p>
-          <span class="text-green-400 font-bold">$10.000</span>
+        <div class="text-4xl mb-4">💻</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Formateo y Instalación</h3>
+        <p class="text-gray-300 mb-4">Reinstalación completa del sistema operativo con todos los drivers y programas necesarios.</p>
+        <span class="text-green-400 font-bold">$10.000</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-green-400">
-          <div class="text-4xl mb-4">🧹</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Limpieza y Mantenimiento</h3>
-          <p class="text-gray-300 mb-4">Limpieza completa de hardware y optimización del sistema para mejor rendimiento.</p>
-          <span class="text-green-400 font-bold">$10.000</span>
+        <div class="text-4xl mb-4">🧹</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Limpieza y Mantenimiento</h3>
+        <p class="text-gray-300 mb-4">Limpieza completa de hardware y optimización del sistema para mejor rendimiento.</p>
+        <span class="text-green-400 font-bold">$10.000</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-red-400">
-          <div class="text-4xl mb-4">⚙️</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Armado de PC</h3>
-          <p class="text-gray-300 mb-4">Quieres Armar un Computador de Escriotorio pero no sabes como, yo lo puedo ensamblar y te explico el paso a paso.</p>
-          <span class="text-green-400 font-bold">30.000</span>
+        <div class="text-4xl mb-4">⚙️</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Armado de PC</h3>
+        <p class="text-gray-300 mb-4">Quieres Armar un Computador de Escriotorio pero no sabes como, yo lo puedo ensamblar y te explico el paso a paso.</p>
+        <span class="text-green-400 font-bold">30.000</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-orange-400">
-          <div class="text-4xl mb-4">🌐</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Desarrollo Web</h3>
-          <p class="text-gray-300 mb-4">Creación de páginas web modernas y responsivas para tu negocio o proyecto.</p>
-          <span class="text-green-400 font-bold">Cotización</span>
+        <div class="text-4xl mb-4">🌐</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Desarrollo Web</h3>
+        <p class="text-gray-300 mb-4">Creación de páginas web modernas y responsivas para tu negocio o proyecto.</p>
+        <span class="text-green-400 font-bold">Cotización</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-cyan-400">
-          <div class="text-4xl mb-4">🛠️</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Soporte Técnico</h3>
-          <p class="text-gray-300 mb-4">Diagnóstico y solución de problemas técnicos, instalación de software y asesoría.</p>
-          <span class="text-green-400 font-bold">$10.000</span>
+        <div class="text-4xl mb-4">🛠️</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Soporte Técnico</h3>
+        <p class="text-gray-300 mb-4">Diagnóstico y solución de problemas técnicos, instalación de software y asesoría.</p>
+        <span class="text-green-400 font-bold">$10.000</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-pink-400">
-          <div class="text-4xl mb-4">📱</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Sistemas Automatizados</h3>
-          <p class="text-gray-300 mb-4">Desarrollo de sistemas de recordatorios y notificaciones automatizadas.</p>
-          <span class="text-green-400 font-bold">Cotización</span>
+        <div class="text-4xl mb-4">📱</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Sistemas Automatizados</h3>
+        <p class="text-gray-300 mb-4">Desarrollo de sistemas de recordatorios y notificaciones automatizadas.</p>
+        <span class="text-green-400 font-bold">Cotización</span>
         </div>
 
         <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-pink-400">
-          <div class="text-4xl mb-4">📄</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Portafolio Profesional</h3>
-          <p class="text-gray-300 mb-4">Creacion de Portafolio para presentase en los futuros trabajos que se postule </p>
-          <span class="text-green-400 font-bold">Cotizacion</span>
+        <div class="text-4xl mb-4">📄</div>
+        <h3 class="text-xl font-semibold text-white mb-3">Portafolio Profesional</h3>
+        <p class="text-gray-300 mb-4">Creacion de Portafolio para presentase en los futuros trabajos que se postule </p>
+        <span class="text-green-400 font-bold">Cotizacion</span>
         </div>
 
-      </div>
     </div>
-  </section>
+    </div>
+</section>
 <!--  Contacto -->
     <section id="contacto" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(34, 197, 94, 0.1) 1px, transparent 0); background-size: 50px 50px;">
         <div class="absolute top-16 right-16 w-24 h-24 border-4 border-emerald-400/30 rounded-full animate-spin" style="animation-duration: 4s;"></div>
         <div class="absolute bottom-16 left-16 w-20 h-20 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-lg rotate-45 float-animation"></div>
         <div class="absolute top-1/4 right-1/4 w-14 h-14 bg-teal-400/20 rounded-full animate-pulse"></div>
         
-        <div class="max-w-5xl mx-auto flex justify-center items-center relative z-10">
-  <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-l-4 border-emerald-400 shadow-2xl hover:shadow-emerald-400/20 transition-all duration-300 max-w-lg w-full">
-    <h2 class="text-4xl font-bold text-emerald-400 mb-6">¡Conectemos!</h2>
-    <p class="text-gray-300 leading-relaxed mb-6">
-      ¿Tienes un proyecto en mente o necesitas ayuda con tu computadora? Contáctame y te respondere a la brevedad.
-    </p>
-    <div class="space-y-4">
-      <!-- Email -->
-      <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-        <img src="img/gmail.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
-        <div>
-          <h3 class="text-white font-semibold">Email</h3>
-          <p class="text-gray-400 text-sm">hectorfmf2002@gmail.com</p>
-        </div>
-      </div>
-      <!-- WhatsApp -->
-      <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-        <img src="img/social.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
-        <div>
-          <h3 class="text-white font-semibold">WhatsApp</h3>
-          <p class="text-gray-400 text-sm">+569 81736629</p>
-        </div>
-      </div>
-      <!-- GitHub -->
-      <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-        <img src="img/github.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
-        <div>
-            <h3 class="text-white font-semibold">GitHub</h3>
-            <a href="https://github.com/hectormadrid" class="text-gray-400 text-sm"> Click Para ver mi GitHub </a>
-        </div>
-      </div>
-      <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-        <img src="img/linkedin.png" class="mr-4 bg-cyan-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
-        <div>
-            <h3 class="text-white font-semibold">LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/hector-madrid-025647356/" class="text-gray-400 text-sm">Click Para ver mi LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-4xl font-bold text-emerald-400 mb-12 text-center">¡Hablemos!</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Columna del Formulario -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-l-4 border-emerald-400 shadow-2xl">
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        ¿Tienes un proyecto en mente o alguna pregunta? Completa el formulario.
+                    </p>
+                    <form action="https://formspree.io/f/mblqrkan" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
+                            <input type="text" name="name" id="name" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" name="email" id="email" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensaje</label>
+                            <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-</section>
+                <!-- Columna de Detalles de Contacto -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-r-4 border-emerald-400 shadow-2xl">
+                     <p class="text-gray-300 leading-relaxed mb-6">
+                        O contáctame directamente a través de estos medios.
+                    </p>
+                    <div class="space-y-4">
+                        <!-- Email -->
+                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
+                            <img src="img/gmail.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
+                            <div>
+                                <h3 class="text-white font-semibold">Email</h3>
+                                <p class="text-gray-400 text-sm">hectorfmf2002@gmail.com</p>
+                            </div>
+                        </div>
+                        <!-- WhatsApp -->
+                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
+                            <img src="img/social.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
+                            <div>
+                                <h3 class="text-white font-semibold">WhatsApp</h3>
+                                <p class="text-gray-400 text-sm">+569 81736629</p>
+                            </div>
+                        </div>
+                        <!-- GitHub -->
+                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
+                            <img src="img/github.png" class="mr-4 bg-emerald-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
+                            <div>
+                                <h3 class="text-white font-semibold">GitHub</h3>
+                                <a href="https://github.com/hectormadrid" class="text-gray-400 text-sm"> Click Para ver mi GitHub </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
+                            <img src="img/linkedin.png" class="mr-4 bg-cyan-400/10 rounded-full w-12 h-12 flex items-center justify-center group-hover:bg-emerald-400/20 transition-all"></img>
+                            <div>
+                                <h3 class="text-white font-semibold">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/hector-madrid-025647356/" class="text-gray-400 text-sm">Click Para ver mi LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!-- Footer -->
 <footer class="py-6 text-center bg-[#252538] text-gray-400">
