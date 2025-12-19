@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/* --- From css/menu.css --- */
+#mobile-menu {
+    transition: height 0.3s ease-in-out !important;
+    overflow: hidden;
+    display: block !important;
+}
+
+#mobile-menu.hidden {
+    display: none !important;
+}
+
+/* --- From inline style in index.html --- */
+body { font-family: 'Poppins', sans-serif; }
+
+.hidden-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- From css/animation.css (cleaned) --- */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn { animation: fadeIn 1.2s ease-in-out; }
+.animate-slideInLeft { animation: slideInLeft 1.2s ease-in-out; }
+.animate-slideInRight { animation: slideInRight 1.2s ease-in-out; }
+.animate-slideInUp { animation: slideInUp 1s ease forwards; }
