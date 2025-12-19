@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/menu.css">
 
 <link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <style>
     body { font-family: 'Poppins', sans-serif; }
     .hidden-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -188,78 +189,97 @@
             <h3 class="text-4xl font-bold mb-16 text-center text-blue-400">Habilidades Técnicas</h3>
             
             <!-- Grid de habilidades -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-                <!-- HTML -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-orange-400/20 transition-all duration-300 group border border-orange-400/20 hover:border-orange-400/50">
-                    <div class="flex flex-col items-center"> 
-                    <i class='bxl  bx-html5'  style='color:#dc581a ; font-size: 80px '></i>
-                        <h4 class="font-bold text-lg mb-4 text-orange-400 group-hover:text-orange-300 transition-colors">HTML</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar " data-progress ="90"></div>
+            <div class="swiper-container skills-carousel">
+                <div class="swiper-wrapper">
+                    <!-- HTML -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-orange-400/20 transition-all duration-300 group border border-orange-400/20 hover:border-orange-400/50">
+                            <div class="flex flex-col items-center"> 
+                            <i class='bxl  bx-html5'  style='color:#dc581a ; font-size: 80px '></i>
+                                <h4 class="font-bold text-lg mb-4 text-orange-400 group-hover:text-orange-300 transition-colors">HTML</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar " data-progress ="90"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">90%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">90%</span>
                     </div>
-                </div>
 
-                <!-- CSS -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-blue-400/20 transition-all duration-300 group border border-blue-400/20 hover:border-blue-400/50">
-                    <div class="flex flex-col items-center">
-                        <i class='bxl  bx-css3'  style='color:#0775ff ; font-size: 80px '></i>
-                        <h4 class="font-bold text-lg mb-4 text-blue-400 group-hover:text-blue-300 transition-colors">CSS</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="90"></div>
+                    <!-- CSS -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-blue-400/20 transition-all duration-300 group border border-blue-400/20 hover:border-blue-400/50">
+                            <div class="flex flex-col items-center">
+                                <i class='bxl  bx-css3'  style='color:#0775ff ; font-size: 80px '></i>
+                                <h4 class="font-bold text-lg mb-4 text-blue-400 group-hover:text-blue-300 transition-colors">CSS</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="90"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">90%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">90%</span>
                     </div>
-                </div>
 
-                <!-- JavaScript -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 group border border-yellow-400/20 hover:border-yellow-400/50">
-                    <div class="flex flex-col items-center">
-                        <i class='bxl  bx-javascript'  style='color:#ffe308 ;font-size: 80px'  ></i>
-                        <h4 class="font-bold text-lg mb-4 text-yellow-400 group-hover:text-yellow-300 transition-colors">JavaScript</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="80"></div>
+                    <!-- JavaScript -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 group border border-yellow-400/20 hover:border-yellow-400/50">
+                            <div class="flex flex-col items-center">
+                                <i class='bxl  bx-javascript'  style='color:#ffe308 ;font-size: 80px'  ></i>
+                                <h4 class="font-bold text-lg mb-4 text-yellow-400 group-hover:text-yellow-300 transition-colors">JavaScript</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="80"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">80%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">80%</span>
                     </div>
-                </div>
 
-                <!-- MySQL -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-cyan-400/20 transition-all duration-300 group border border-cyan-400/20 hover:border-cyan-400/50">
-                    <div class="flex flex-col items-center">
-                        <i class='bxl  bx-my-sql'  style='color:#2fc7f5 ; font-size: 80px'  ></i>
-                        <h4 class="font-bold text-lg mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">MySQL</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="100"></div>
+                    <!-- MySQL -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-cyan-400/20 transition-all duration-300 group border border-cyan-400/20 hover:border-cyan-400/50">
+                            <div class="flex flex-col items-center">
+                                <i class='bxl  bx-my-sql'  style='color:#2fc7f5 ; font-size: 80px'  ></i>
+                                <h4 class="font-bold text-lg mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">MySQL</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="100"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">100%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">100%</span>
                     </div>
-                </div>
 
-                <!-- Laravel -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-red-400/20 transition-all duration-300 group border border-red-400/20 hover:border-red-400/50">
-                    <div class="flex flex-col items-center">
-                        <i class='bxl  bx-laravel'  style='color:#dc0000 ; font-size: 80px'  ></i>
-                        <h4 class="font-bold text-lg mb-4 text-red-400 group-hover:text-red-300 transition-colors">Laravel</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-red-400 to-red-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="20"></div>
+                    <!-- Laravel -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-red-400/20 transition-all duration-300 group border border-red-400/20 hover:border-red-400/50">
+                            <div class="flex flex-col items-center">
+                                <i class='bxl  bx-laravel'  style='color:#dc0000 ; font-size: 80px'  ></i>
+                                <h4 class="font-bold text-lg mb-4 text-red-400 group-hover:text-red-300 transition-colors">Laravel</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-red-400 to-red-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="20"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">20%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">20%</span>
                     </div>
-                </div>
 
-                <!-- PHP -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 group border border-purple-400/20 hover:border-purple-400/50">
-                    <div class="flex flex-col items-center">
-                        <i class='bxl  bx-php'  style='color:#9935f7 ; font-size: 80px '  ></i>
-                        <h4 class="font-bold text-lg mb-4 text-purple-400 group-hover:text-purple-300 transition-colors">PHP</h4>
-                        <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                            <div class="bg-gradient-to-r from-purple-400 to-purple-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="50"></div>
+                    <!-- PHP -->
+                    <div class="swiper-slide">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 group border border-purple-400/20 hover:border-purple-400/50">
+                            <div class="flex flex-col items-center">
+                                <i class='bxl  bx-php'  style='color:#9935f7 ; font-size: 80px '  ></i>
+                                <h4 class="font-bold text-lg mb-4 text-purple-400 group-hover:text-purple-300 transition-colors">PHP</h4>
+                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
+                                    <div class="bg-gradient-to-r from-purple-400 to-purple-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="50"></div>
+                                </div>
+                                <span class="text-sm text-gray-400 font-semibold">50%</span>
+                            </div>
                         </div>
-                        <span class="text-sm text-gray-400 font-semibold">50%</span>
                     </div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
 
             <!-- Sección adicional con stats -->
@@ -902,6 +922,7 @@
     &copy; 2025 Mi Portafolio todos los derechos reservados. | Diseñado por Héctor Fernando Madrid Flores
 </footer>
 <!-- Scripts -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
