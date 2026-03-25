@@ -1,4 +1,3 @@
-
 export function initSkillsCarousel() {
     const skillsCarousel = new Swiper('.skills-carousel', {
         loop: true,
