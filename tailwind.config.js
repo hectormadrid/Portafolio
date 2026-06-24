@@ -4,8 +4,11 @@ module.exports = {
     "./index.html",
     "./js/**/*.js",
   ],
+  
   theme: {
     extend: {},
   },
   plugins: [],
+
+  
 }
