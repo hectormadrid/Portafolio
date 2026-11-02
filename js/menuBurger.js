@@ -1,71 +1,41 @@
+// Menú del celular: abre y cierra la lista de enlaces.
+// La animación de apertura está en style.css (#mobile-menu).
 export function initMenuBurger() {
-    const toggleBtn = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+  const button = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (!button || !menu) return;
 
-    // Asegurar que el menú tenga las clases de transición
-    mobileMenu.classList.add('transition-all', 'duration-300', 'ease-in-out', 'overflow-hidden');
-    
-    toggleBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isHidden) {
-            // Abrir menú con animación
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.style.height = '0';
-            
-            // Pequeño delay para iniciar la animación
-            setTimeout(() => {
-                mobileMenu.style.height = mobileMenu.scrollHeight + 'px';
-            }, 10);
-            
-            toggleBtn.setAttribute('aria-expanded', 'true');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-        } else {
-            // Cerrar menú con animación
-            mobileMenu.style.height = mobileMenu.scrollHeight + 'px';
-            
-            setTimeout(() => {
-                mobileMenu.style.height = '0';
-            }, 10);
-            
-            // Esperar a que termine la animación para ocultar completamente
-            mobileMenu.addEventListener('transitionend', function handler() {
-                if (mobileMenu.style.height === '0px') {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.style.height = '';
-                    mobileMenu.removeEventListener('transitionend', handler);
-                }
-            });
-            
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-        }
-    });
+  const iconOpen = button.querySelector('[data-icon="open"]');
+  const iconClose = button.querySelector('[data-icon="close"]');
 
-    // Cerrar menú al hacer click en enlaces
-    mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.style.height = '0';
-                toggleBtn.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-                
-                mobileMenu.addEventListener('transitionend', function handler() {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.style.height = '';
-                    mobileMenu.removeEventListener('transitionend', handler);
-                });
-            }
-        });
-    });
+  function setOpen(isOpen) {
+    menu.classList.toggle('hidden', !isOpen);
+    button.setAttribute('aria-expanded', String(isOpen));
+    button.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+  }
 
-    // Cerrar menú al redimensionar la ventana (si se cambia a desktop)
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.style.height = '';
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-        }
-    });
+  // Abrir o cerrar con el botón
+  button.addEventListener('click', () => {
+    setOpen(menu.classList.contains('hidden'));
+  });
+
+  // Cerrar al elegir un enlace
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  // Cerrar con la tecla Escape y devolver el foco al botón
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+
+  // Cerrar si la pantalla pasa a tamaño escritorio
+  window.matchMedia('(min-width: 768px)').addEventListener('change', (event) => {
+    if (event.matches) setOpen(false);
+  });
 }

@@ -1,1136 +1,604 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mi Portafolio </title>
-<link rel="stylesheet" href="src/output.css">
-<link href='https://cdn.boxicons.com/3.0.3/fonts/transformations.min.css' rel='stylesheet'>
-<link href='https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="img/favicon.ico">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Héctor Madrid | Desarrollo web y sistemas a medida</title>
+  <meta name="description" content="Páginas web y sistemas a medida para negocios de la Región de O'Higgins. Ingeniero en Informática en Codegua, Chile." />
+  <meta name="author" content="Héctor Madrid Flores" />
+  <meta name="theme-color" content="#1c1c2b" />
+  <link rel="icon" href="img/favicon.ico" sizes="any" />
+
+  <!-- Vista previa al compartir el enlace (WhatsApp, LinkedIn, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:title" content="Héctor Madrid | Desarrollo web y sistemas a medida" />
+  <meta property="og:description" content="Páginas web y sistemas a medida para negocios de la Región de O'Higgins." />
+
+  <!-- Tipografías: Bricolage Grotesque (títulos) + Manrope (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Íconos de marcas (WhatsApp, GitHub, LinkedIn...) -->
+  <link href="https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/output.css" />
+
+  <!-- Marca que hay JavaScript: activa las animaciones de aparición -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-[#1e1e2f] text-[#e0e0e0] ">                
 
-<!-- Header -->
-<header class="bg-[#252538] sticky top-0 z-50 shadow-md">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <!-- Logo -->
-    <h1 class="text-2xl font-bold text-[#6cc644]">Mi Portafolio</h1>
+<body class="bg-ink text-fg font-body antialiased">
 
-    <!-- Botón hamburguesa -->
-    <button
-        id="menu-toggle"
-      class="md:hidden text-gray-300 focus:outline-none"
-        aria-label="Abrir menú"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-        type="button">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
-        d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-    </button>
+<!-- =========================================================
+     ENCABEZADO
+     ========================================================= -->
+<header id="site-header" class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-line transition-shadow duration-300">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#inicio" class="font-display font-bold text-lg tracking-tight">
+      Héctor Madrid<span class="text-brand">.</span>
+    </a>
 
-    <!-- Menú de navegación  -->
-    <nav class="hidden md:flex space-x-6">
-        <a href="#inicio" class="text-gray-300 hover:text-[#6cc644] transition">Inicio</a>
-        <a href="#sobre-mi" class="text-gray-300 hover:text-[#6cc644] transition">Sobre mí</a>
-        <a href="#habilidades" class="text-gray-300 hover:text-[#6cc644] transition">Habilidades</a>
-        <a href="#experiencia" class="text-gray-300 hover:text-[#6cc644] transition">Experiencia</a>
-        <a href="#academico" class="text-gray-300 hover:text-[#6cc644] transition">Educacion</a>
-        <a href="#proyectos" class="text-gray-300 hover:text-[#6cc644] transition">Proyectos</a>
-        <a href="#certificados" class="text-gray-300 hover:text-[#6cc644] transition">Certificados</a>
-        <a href="#servicios" class="text-gray-300 hover:text-[#6cc644] transition">Servicios</a>
-        <a href="#contacto" class="text-gray-300 hover:text-[#6cc644] transition">Contacto</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm text-muted" aria-label="Principal">
+      <a href="#proyectos" class="hover:text-fg transition-colors">Proyectos</a>
+      <a href="#servicios" class="hover:text-fg transition-colors">Servicios</a>
+      <a href="#sobre-mi" class="hover:text-fg transition-colors">Sobre mí</a>
+      <a href="#experiencia" class="hover:text-fg transition-colors">Experiencia</a>
+      <a href="#contacto" class="bg-brand text-brand-ink font-semibold px-4 py-2 rounded-md hover:bg-brand-dark transition-colors">Cotizar proyecto</a>
     </nav>
-</div>
 
-<!-- Menú móvil  -->
-<nav
-    id="mobile-menu"
-    class="md:hidden hidden bg-[#252538] px-6 pb-2 space-y-2 absolute w-full top-full left-0"
-    aria-hidden="true"
-    style="height: 0; overflow: hidden;">
-    <a href="#inicio" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Inicio</a>
-    <a href="#sobre-mi" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Sobre mí</a>
-    <a href="#habilidades" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Habilidades</a>
-    <a href="#experiencia" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Experiencia</a>
-    <a href="#academico" class="text-gray-300 hover:text-[#6cc644] transition">Educacion</a>
-    <a href="#proyectos" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Proyectos</a>
-    <a href="#certificados" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Certificados</a>
-    <a href="#servicios" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Servicios</a>
-    <a href="#contacto" class="block py-2 text-gray-300 hover:text-[#6cc644] transition">Contacto</a>
-</nav>
-</header>
-
-<!-- Sección: Hero/Inicio -->
-<section id="inicio" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 hero-bg gradient-animate overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.1) 1px, transparent 0); background-size: 40px 40px;">
-    
-        <div class="absolute top-20 left-20 w-20 h-20 border-4 border-green-400/20 rounded-full animate-spin"></div>
-        <div class="absolute bottom-32 right-20 w-28 h-28 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-lg rotate-12 float-animation"></div>
-        <div class="absolute top-1/3 right-1/4 w-12 h-12 bg-green-400/20 rounded-full animate-bounce"></div>
-        <div class="absolute bottom-1/2 left-1/4 w-16 h-16 border-2 border-blue-400/30 rounded-lg rotate-45 animate-pulse"></div>
-        <div class="absolute top-1/4 left-1/3 w-10 h-10 bg-purple-400/20 rounded-full animate-ping"></div>
-        <div class="absolute bottom-1/3 right-1/3 w-14 h-14 bg-gradient-to-tr from-green-400/10 to-blue-400/10 rounded-full float-animation" style="animation-delay: 1s;"></div>
-        
-        <!-- Contenido principal -->
-        <div class="relative z-10 max-w-4xl mx-auto hidden-element">
-            <!-- Título principal -->
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Hola, soy 
-                <span class="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-                    Héctor Fernando Madrid Flores
-                </span>
-            </h1>
-            
-            <!-- Texto con efecto typing -->
-            <div class="mb-8 h-16 flex items-center justify-center">
-                <p id="typingText" class="text-xl md:text-2xl text-gray-300 typing-text font-semibold"></p>
-            </div>
-            
-            <!-- Tarjetas de presentación rápida -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-                <div class="bg-slate-800/50 backdrop-blur-sm p-4 rounded-xl border border-green-400/20 hover:border-green-400/50 transition-all duration-300 group">
-                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform">🎓</div>
-                    <h3 class="text-white font-semibold text-sm">Ingeniero Informático</h3>
-                    <p class="text-gray-400 text-xs"> titulado</p>
-                </div>
-                <div class="bg-slate-800/50 backdrop-blur-sm p-4 rounded-xl border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 group">
-                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform">💼</div>
-                    <h3 class="text-white font-semibold text-sm">Soporte TI</h3>
-                    <p class="text-gray-400 text-xs">Experiencia laboral </p>
-                </div>
-                <div class="bg-slate-800/50 backdrop-blur-sm p-4 rounded-xl border border-purple-400/20 hover:border-purple-400/50 transition-all duration-300 group">
-                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform">⚙️</div>
-                    <h3 class="text-white font-semibold text-sm">Servicos Tecnicos</h3>
-                    <p class="text-gray-400 text-xs">Rapidos y Confiables</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Onda decorativa en la parte inferior -->
-        <svg class="absolute bottom-0 left-0 w-full " viewBox="0 0 1440 320">
-            <path fill="url(#waveGradient)" fill-opacity="0.8" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,85.3C1248,64,1344,64,1392,64L1440,64V320H0Z"></path>
-            <defs>
-                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#4ade80"/>
-                    <stop offset="50%" style="stop-color:#3b82f6"/>
-                    <stop offset="100%" style="stop-color:#6366f1"/>
-                </linearGradient>
-            </defs>
-        </svg>
-        
-        <!-- Flecha indicadora de scroll -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden-element">
-            <div class="w-8 h-8 border-2 border-green-400 rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
-<!-- sobre mi -->
-<section id="sobre-mi" class="py-20 px-6 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 relative overflow-hidden hidden-element" style="background-image: radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.1) 1px, transparent 0); background-size: 40px 40px;">
-
-    <div class="absolute top-16 left-16 w-20 h-20 border-4 border-blue-400/20 rounded-full animate-spin"></div>
-    <div class="absolute bottom-16 right-16 w-28 h-28 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-lg rotate-12"></div>
-    <div class="absolute top-1/3 right-1/3 w-12 h-12 bg-green-400/20 rounded-full animate-bounce"></div>
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-
-
-        <div class="flex justify-center">
-            <img src="img/foto.png" class="rounded-2xl shadow-2xl border-4 border-blue-400 h-72 bg-gradient-to-tr from-slate-700 to-slate-600 flex items-center justify-center text-blue-400 text-6xl hover:border-green-400 hover:text-green-400 transition-all duration-500 w-72 object-cover"> </img>
-        </div>
-
-        <!-- Texto -->
-        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-l-4 border-green-400 shadow-2xl hover:shadow-green-400/20 transition-all duration-300">
-            <h2 class="text-4xl font-bold text-blue-400 mb-6">Sobre mí</h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                Ingeniero Informático titulado, con experiencia en el desarrollo de proyectos 
-                pequeños y motivación por adquirir y consolidar conocimientos en las distintas 
-                áreas de la informática. Poseo habilidades en programación y manejo de diversas
-                tecnologías, además de una alta disposición para seguir aprendiendo y asumir nuevos desafíos
-                que impulsen tanto mi crecimiento profesional como personal. Me caracterizo por el compromiso, 
-                la capacidad de trabajo en equipo, la buena comunicación y la orientación al logro de objetivos.
-            </p>
-            <ul class="space-y-3 text-gray-300">
-                <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Trabajo en equipo</li>
-                <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Responsable, organizado y puntual</li>
-                <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Apasionado por aprender nuevas tecnologías</li>
-                <li class="flex items-center p-2 rounded-lg hover:bg-slate-600/30 transition-all"><span class="text-green-400 text-xl mr-3 bg-green-400/10 rounded-full w-8 h-8 flex items-center justify-center">✔</span> Enfoque en la mejora continua</li>
-            </ul>
-        </div>
-    </div>
-    </section>
-
-<!-- Habilidades -->
-<section id="habilidades" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(34, 197, 94, 0.1) 1px, transparent 0); background-size: 35px 35px;">
-
-
-        <div class="absolute top-20 right-20 w-16 h-16 border-4 border-green-400/30 rotate-45 animate-pulse"></div>
-        <div class="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-full float-animation"></div>
-        <div class="absolute top-1/2 left-1/4 w-8 h-8 bg-blue-400/30 rounded-lg animate-spin" style="animation-duration: 3s;"></div>
-        <div class="absolute top-1/3 right-1/4 w-12 h-12 bg-orange-400/20 rounded-full animate-bounce"></div>
-        <div class="absolute bottom-1/3 right-1/3 w-10 h-10 border-2 border-purple-400/30 rounded-lg rotate-12 animate-pulse"></div>
-        
-        <div class="max-w-7xl mx-auto relative z-10">
-            <!-- Título -->
-            <h3 class="text-4xl font-bold mb-16 text-center text-blue-400">Habilidades Técnicas</h3>
-            
-            <!-- Grid de habilidades -->
-            <div class="swiper-container skills-carousel">
-                <div class="swiper-wrapper">
-                    <!-- HTML -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-orange-400/20 transition-all duration-300 group border border-orange-400/20 hover:border-orange-400/50">
-                            <div class="flex flex-col items-center"> 
-                            <i class='bxl  bx-html5'  style='color:#dc581a ; font-size: 80px '></i>
-                                <h4 class="font-bold text-lg mb-4 text-orange-400 group-hover:text-orange-300 transition-colors">HTML</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar " data-progress ="90"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">90%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CSS -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-blue-400/20 transition-all duration-300 group border border-blue-400/20 hover:border-blue-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class='bxl  bx-css3'  style='color:#0775ff ; font-size: 80px '></i>
-                                <h4 class="font-bold text-lg mb-4 text-blue-400 group-hover:text-blue-300 transition-colors">CSS</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="90"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">90%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- JavaScript -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 group border border-yellow-400/20 hover:border-yellow-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class='bxl  bx-javascript'  style='color:#ffe308 ;font-size: 80px'  ></i>
-                                <h4 class="font-bold text-lg mb-4 text-yellow-400 group-hover:text-yellow-300 transition-colors">JavaScript</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="80"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Python-->
-                     <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-blue-400/20 transition-all duration-300 group border border-blue-400/20 hover:border-blue-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class="bxl bx-python" style="background: linear-gradient(45deg, #3776AB 50%, #FFD43B 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 80px;"></i>
-                                <h4 class="font-bold text-lg mb-4 text-blue-400 group-hover:text-blue-300 transition-colors">Python</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                   <div class="h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="50" style="background: linear-gradient(90deg, #306998 0%, #3776AB 30%, #FFD43B 70%, #FFE873 100%);"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">50%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MySQL -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-cyan-400/20 transition-all duration-300 group border border-cyan-400/20 hover:border-cyan-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class='bxl  bx-my-sql'  style='color:#2fc7f5 ; font-size: 80px'  ></i>
-                                <h4 class="font-bold text-lg mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">MySQL</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="100"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">100%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Laravel -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-red-400/20 transition-all duration-300 group border border-red-400/20 hover:border-red-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class='bxl  bx-laravel'  style='color:#dc0000 ; font-size: 80px'  ></i>
-                                <h4 class="font-bold text-lg mb-4 text-red-400 group-hover:text-red-300 transition-colors">Laravel</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-red-400 to-red-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="20"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">20%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PHP -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 group border border-purple-400/20 hover:border-purple-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class='bxl  bx-php'  style='color:#9935f7 ; font-size: 80px '  ></i>
-                                <h4 class="font-bold text-lg mb-4 text-purple-400 group-hover:text-purple-300 transition-colors">PHP</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-purple-400 to-purple-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="50"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">50%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- react -->
-                    <div class="swiper-slide">
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 group border border-purple-400/20 hover:border-purple-400/50">
-                            <div class="flex flex-col items-center">
-                                <i class="bxl bx-react" style='color:#2fc4e8;  font-size: 80px '  ></i>
-                                <h4 class="font-bold text-lg mb-4 text-cyan-400 group-hover:text-purple-300 transition-colors">REACT</h4>
-                                <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden mb-2">
-                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full transition-all duration-1000 ease-out progress-bar" data-progress="35"></div>
-                                </div>
-                                <span class="text-sm text-gray-400 font-semibold">35%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Navigation -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-
-            <!-- Sección adicional con stats -->
-            <div class="mt-16 bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-8 rounded-2xl border border-blue-400/20">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="group">
-                        <div class="text-3xl font-bold text-green-400 group-hover:text-green-300 transition-colors">8</div>
-                        <div class="text-gray-400 text-sm">Tecnologías</div>
-                    </div>
-                    <div class="group">
-                        <div class="text-3xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors">2+</div>
-                        <div class="text-gray-400 text-sm">Años aprendiendo</div>
-                    </div>
-                    <div class="group">
-                        <div class="text-3xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">8</div>
-                        <div class="text-gray-400 text-sm">Proyectos</div>
-                    </div>
-                    <div class="group">
-                        <div class="text-3xl font-bold text-orange-400 group-hover:text-orange-300 transition-colors">73%</div>
-                        <div class="text-gray-400 text-sm">Promedio</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Experiencia Laboral -->
-<section id="experiencia" class="py-20 px-6 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.1) 1px, transparent 0); background-size: 30px 30px;">
-
-        <div class="absolute top-20 left-20 w-16 h-16 border-4 border-blue-400/20 rounded-lg rotate-45 animate-pulse"></div>
-        <div class="absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-full float-animation"></div>
-        <div class="absolute top-1/3 right-1/3 w-10 h-10 bg-green-400/20 rounded-full animate-bounce"></div>
-        <div class="absolute top-1/4 right-20 w-10 h-10 bg-purple-400/20 rounded-full animate-ping"></div>
-        <div class="absolute bottom-1/3 left-1/4 w-12 h-12 border-2 border-green-400/30 rounded-full animate-spin" style="animation-duration: 3s;"></div>
-        
-        <div class="max-w-5xl mx-auto relative z-10">
-            <!-- Título -->
-            <h3 class="text-4xl font-bold mb-16 text-center text-green-400">Experiencia Laboral</h3>
-            
-            <div class="max-w-5xl mx-auto flex justify-center items-center relative z-10">
-                
-                
-                <!-- Timeline de experiencia -->
-                <div class="relative order-1 md:order-2">
-                    <!-- Línea vertical principal -->
-                    <div class="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-green-400 to-blue-400"></div>
-                    
-                    <!-- Experiencia 1 -->
-                    <div class="relative mb-12">
-                        <!-- Punto de conexión -->
-                        <div class="absolute left-0 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center text-slate-900 text-lg font-bold shadow-lg">
-                            💻
-                        </div>
-                        
-                        <!-- Contenido -->
-                        <div class="ml-16 bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-green-400 shadow-2xl hover:shadow-green-400/20 transition-all duration-300 group">
-                            <span class="text-sm text-green-400 font-semibold bg-green-400/10 px-3 py-1 rounded-full">
-                                Octubre 2024 - Febrero 2025
-                            </span>
-                            <h4 class="text-xl font-bold text-blue-400 mt-3 mb-2 group-hover:text-green-400 transition-colors">
-                                Administrativo informático/Soporte de Usuario
-                            </h4>
-                            <p class="text-gray-300 font-semibold mb-4">Packing Gárate Hermanos</p>
-                            
-                            <div class="space-y-2">
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Soporte a usuarios en entornos con sistema operativo Windows.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Respaldo, preparación de software, instalación y habilitación de equipos para usuarios de la empresa.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Administración de Red Wifi corporativa con equipos gestionados mediante controlador Unifi.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Brindar apoyo en incidencias informáticas en línea de producción de Cerezas como configuración de impresoras IP térmicas y diagnóstico de problemas de red.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Controlar inventario de equipos TI en la empresa (Computadores, Impresoras, Tablet, suministros, monitores, equipos de red y PDA)</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Tags de tecnologías -->
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="px-2 py-1 bg-blue-400/20 text-blue-300 rounded text-xs">Windows</span>
-                                <span class="px-2 py-1 bg-green-400/20 text-green-300 rounded text-xs">UniFi</span>
-                                <span class="px-2 py-1 bg-blue-400/20 text-blue-300 rounded text-xs">Redes</span>
-                                <span class="px-2 py-1 bg-green-400/20 text-green-300 rounded text-xs">Soporte TI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative mb-12">
-                        <!-- Punto de conexión -->
-                        <div class="absolute left-0 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center text-slate-900 text-lg font-bold shadow-lg">
-                            💻
-                        </div>
-                        
-                        <!-- Contenido -->
-                        <div class="ml-16 bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl border-r-4 border-green-400  shadow-2xl hover:shadow-green-400/20 transition-all duration-300 group">
-                            <span class="text-sm text-green-400 font-semibold bg-green-400/10 px-3 py-1 rounded-full">
-                                Octubre 2025 - Enero 2026
-                            </span>
-                            <h4 class="text-xl font-bold text-blue-400 mt-3 mb-2 group-hover:text-green-400 transition-colors">
-                                Administrativo informático/Soporte de Usuario
-                            </h4>
-                            <p class="text-gray-300 font-semibold mb-4">Packing Gárate Hermanos</p>
-                            
-                            <div class="space-y-2">
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Soporte a usuarios en entornos con sistema operativo Windows.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Respaldo, preparación de software, instalación y habilitación de equipos para usuarios de la empresa.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Administración de Red Wifi corporativa con equipos gestionados mediante controlador Unifi.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Brindar apoyo en incidencias informáticas en línea de producción de Cerezas como configuración de impresoras IP térmicas y diagnóstico de problemas de red.</p>
-                                </div>
-                                <div class="flex items-start p-2 rounded-lg hover:bg-slate-600/30 transition-all">
-                                    <span class="text-green-400 mr-3 mt-1">●</span>
-                                    <p class="text-gray-300 text-sm">Controlar inventario de equipos TI en la empresa (Computadores, Impresoras, Tablet, suministros, monitores, equipos de red y PDA)</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Tags de tecnologías -->
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="px-2 py-1 bg-blue-400/20 text-blue-300 rounded text-xs">Windows</span>
-                                <span class="px-2 py-1 bg-green-400/20 text-green-300 rounded text-xs">UniFi</span>
-                                <span class="px-2 py-1 bg-blue-400/20 text-blue-300 rounded text-xs">Redes</span>
-                                <span class="px-2 py-1 bg-green-400/20 text-green-300 rounded text-xs">Soporte TI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Placeholder para más experiencias -->
-                    <div class="relative">
-                        <!-- Punto de conexión -->
-                        <div class="absolute left-0 w-8 h-8 bg-blue-400/50 border-4 border-blue-400/20 rounded-full flex items-center justify-center text-blue-400 text-lg">
-                            ⚡
-                        </div>
-                        
-                        <!-- Contenido placeholder -->
-                        <div class="ml-16 bg-gradient-to-br from-slate-800/50 to-slate-700/50 p-6 rounded-xl border-l-4 border-blue-400/50 shadow-xl border-dashed">
-                            <div class="text-center text-gray-400">
-                                <p class="text-lg font-semibold">Próximas experiencias...</p>
-                                <p class="text-sm">¡Listo para nuevos desafíos!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Educacion-->
-<section id="academico" class="py-20 px-6 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(106, 198, 68, 0.1) 1px, transparent 0); background-size: 35px 35px;">
-        <div class="absolute top-16 left-16 w-20 h-20 border-4 border-green-400/20 rounded-full animate-spin"></div>
-        <div class="absolute bottom-16 right-16 w-28 h-28 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg rotate-12 float-animation"></div>
-        <div class="absolute top-1/3 right-1/3 w-12 h-12 bg-blue-400/20 rounded-full animate-bounce"></div>
-        <div class="absolute bottom-1/4 left-1/4 w-16 h-16 border-2 border-green-400/30 rounded-lg rotate-45 animate-pulse"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <!-- Título -->
-            <h3 class="text-4xl font-bold mb-16 text-center text-green-400">Antecedentes Académicos</h3>
-            
-            <!-- Timeline Académico -->
-            <div class="relative">
-                <!-- Línea horizontal conectora (solo desktop) -->
-                <div class="hidden lg:block absolute top-20 left-1/2 transform -translate-x-1/2 w-3/5 h-1 bg-gradient-to-r from-green-400 via-blue-400 to-green-400 rounded-full"></div>
-                
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-                    <!-- Educación Media -->
-                    <div class="relative flex flex-col items-center text-center group">
-                        <!-- Punto de conexión -->
-                        <img src="img/comercial.jpg" class="w-16 h-16 bg-gradient-to-tr from-green-400 to-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl z-10 group-hover:scale-110 transition-all duration-300 pulse-glow">
-                            
-                        </img>
-                        
-                        <!-- Tarjeta de contenido -->
-                        <div class="mt-6 bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl shadow-2xl hover:shadow-green-400/20 transition-all duration-300 border border-green-400/20 group-hover:border-green-400/50 max-w-sm">
-                            <span class="inline-block text-sm text-green-400 font-semibold bg-green-400/10 px-4 py-2 rounded-full mb-4">
-                                2016 - 2019
-                            </span>
-                            <h4 class="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">
-                                Especialidad: Programación
-                            </h4>
-                            <p class="text-gray-300 mb-4 leading-relaxed">
-                                Liceo Bicentenario Comercial Diego Portales de Rancagua
-                            </p>
-                            
-                            <!-- Logros/Skills -->
-                            <div class="space-y-2 mt-4">
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                    <span class="text-green-400 mr-2">🎯</span>
-                                    <span class="text-sm text-gray-300">Fundamentos de Programación</span>
-                                </div>
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                    <span class="text-green-400 mr-2">💡</span>
-                                    <span class="text-sm text-gray-300">Desarrollo de Lógica</span>
-                                </div>
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                <span class="text-green-400 mr-2">🗄️</span>
-                                    <span class="text-sm text-gray-300">Bases de Datos</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Educación Superior -->
-                    <div class="relative flex flex-col items-center text-center group">
-                        <!-- Punto de conexión -->
-                        <img src="img/santo-tomas.jpg" class="w-16 h-16 bg-gradient-to-tr from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl z-10 group-hover:scale-110 transition-all duration-300 pulse-glow">
-                            
-                        </img>
-                        
-                        <!-- Tarjeta de contenido -->
-                        <div class="mt-6 bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl shadow-2xl hover:shadow-blue-400/20 transition-all duration-300 border border-blue-400/20 group-hover:border-blue-400/50 max-w-sm">
-                            <span class="inline-block text-sm text-blue-400 font-semibold bg-blue-400/10 px-4 py-2 rounded-full mb-4">
-                                2020 - 2024
-                            </span>
-                            <h4 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                                Carrera: Ingeniería en Informática
-                            </h4>
-                            <p class="text-gray-300 mb-4 leading-relaxed">
-                                Instituto Santo Tomás
-                            </p>
-                            
-                            <!-- Logros/Skills -->
-                            <div class="space-y-2 mt-4">
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                    <span class="text-blue-400 mr-2">⚡</span>
-                                    <span class="text-sm text-gray-300">Desarrollo Web Avanzado</span>
-                                </div>
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                    <span class="text-blue-400 mr-2">📊</span>
-                                    <span class="text-sm text-gray-300">Metodologías</span>
-                                </div>
-                                <div class="flex items-center justify-center p-2 bg-slate-600/30 rounded-lg hover:bg-slate-600/50 transition-all">
-                                    <span class="text-blue-400 mr-2">🚀</span>
-                                    <span class="text-sm text-gray-300">Proyectos Integrales</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Sección de logros académicos -->
-            <div class="mt-16 bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-8 rounded-2xl border border-green-400/20">
-                <h4 class="text-2xl font-bold text-center text-green-400 mb-8">Logros Académicos</h4>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center group">
-                        <div class="w-12 h-12 bg-green-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-400/20 transition-all">
-                            <span class="text-2xl">🏆</span>
-                        </div>
-                        <h5 class="text-white font-semibold mb-1">Título Profesional</h5>
-                        <p class="text-gray-400 text-sm">Ingeniero en Informática</p>
-                    </div>
-                    <div class="text-center group">
-                        <div class="w-12 h-12 bg-blue-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-400/20 transition-all">
-                            <span class="text-2xl">📚</span>
-                        </div>
-                        <h5 class="text-white font-semibold mb-1">6 años</h5>
-                        <p class="text-gray-400 text-sm">Formación académica</p>
-                    </div>
-                    <div class="text-center group">
-                        <div class="w-12 h-12 bg-green-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-400/20 transition-all">
-                            <span class="text-2xl">💻</span>
-                        </div>
-                        <h5 class="text-white font-semibold mb-1">Especialización</h5>
-                        <p class="text-gray-400 text-sm">Desarrollo de Software</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Proyectos -->
-<section id="proyectos" class="py-20 px-6 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(168, 85, 247, 0.1) 1px, transparent 0); background-size: 45px 45px;">
-       <!-- Swiper Carousel -->
-<div class="relative">
-
-  <!-- Botón PREV — fuera del swiper-container -->
-  <div class="swiper-button-prev !text-white !w-10 !h-10 !-left-2
-              after:!text-base bg-slate-700/80 hover:bg-blue-500
-              !rounded-full transition-all duration-300 z-20"></div>
-
-  <!-- Botón NEXT — fuera del swiper-container -->
-  <div class="swiper-button-next !text-white !w-10 !h-10 !-right-2
-              after:!text-base bg-slate-700/80 hover:bg-blue-500
-              !rounded-full transition-all duration-300 z-20"></div>
-
-  <div class="swiper-container projects-carousel !overflow-hidden">
-    <div class="swiper-wrapper">
-
-      <!-- Proyecto 1 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-purple-400 transition-colors">Sistema de Recordatorio para pacientes</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Html, JavaScript, Tailwind Css, Node.js, Php, MySQL</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Sistema de Recordatorio via WhatsApp para pacientes de centros Medicos y/o Hospitales.</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>Completado
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://github.com/hectormadrid/Medirecord" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 2 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-pink-300 transition-colors">Mundo Libreria</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Html, JavaScript, Tailwind Css, Php, MySQL</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Pagina web para una Libreria donde el Administrador tenga gestion de los productos y que los usuario pueden ver y comprar productos.</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>En Desarrollo
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://github.com/hectormadrid/Mundo-Libreria" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 3 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-pink-300 transition-colors">Portafolio Prevencionista de Riesgo</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Html, JavaScript, Tailwind Css</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Portafolio web para una provencionista de Riesgo con sus respectivos datos, curso y certificaciones.</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>Completado
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://portafolio-ximena-soto.vercel.app" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 4 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-pink-300 transition-colors">Detector de cara en webcam</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Python</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Un Programa que detecta caras en una webcam en tiempo real</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>Completado
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://github.com/hectormadrid/Detector-de-caras-tiempo-real" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 5 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-purple-400 transition-colors">Api Todo App (Aplicacion de Tareas)</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Python, SQLite</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Una API RESTful para una aplicación de tareas (Todo App) que permite a los usuarios gestionar sus tareas de manera eficiente.</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>Completado
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://github.com/hectormadrid/Todo-App" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Proyecto 6 -->
-       <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-purple-400 transition-colors">Coach League of Legends</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Python</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Una programa que enseñe a jugadores nuevo de League of Legends, integrado con Inteligencia Artificial </p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span> En Desarrollo
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto">
-            <a href="https://github.com/hectormadrid/Coach_lol" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Proyecto 7 -->
-      <div class="swiper-slide">
-        <div class="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 group h-full flex flex-col">
-          <h3 class="text-white font-semibold text-xl group-hover:text-purple-400 transition-colors">Habitosapp</h3>
-          <p class="text-gray-400 text-sm mt-1 mb-4">Html, React,Css, Node.js</p>
-          <p class="text-gray-300 text-base mb-4 flex-grow">Aplicacion web para gestionar rutinas y tareas, con una visualizacion para ver que habirtos se cumplieron en el mes</p>
-          <div class="py-3 flex justify-center">
-            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-              <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>En Desarrollo
-            </span>
-          </div>
-          <div class="flex justify-center mt-auto gap-4">
-            <a href="https://github.com/hectormadrid/Habitosapp" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver en GitHub
-            </a>
-            <a href="https://habitosapp-eta.vercel.app/" target="_blank"
-               class="inline-block px-4 py-2 text-blue-400 hover:text-white border-2 border-blue-400 hover:bg-blue-400 rounded-lg transition-all duration-300 font-medium hover:scale-105">
-              Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination !bottom-0 mt-8"></div>
+    <!-- Botón menú celular -->
+    <button id="menu-toggle" class="md:hidden p-2 -mr-2 text-fg" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <svg data-icon="open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg data-icon="close" class="hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 
-</div>
-    </section>
-<!--Centificados-->
-<section id="certificados" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.1) 1px, transparent 0); background-size: 40px 40px;">
-        
-        <div class="absolute top-20 left-20 w-24 h-24 border-4 border-blue-400/20 rounded-lg rotate-12 animate-pulse"></div>
-        <div class="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full float-animation"></div>
-        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400/20 rounded-full animate-bounce"></div>
-        <div class="absolute bottom-1/3 right-1/3 w-12 h-12 border-2 border-green-400/30 rounded-full animate-spin" style="animation-duration: 4s;"></div>
-        <div class="absolute top-1/4 right-1/4 w-10 h-10 bg-purple-400/20 rounded-lg rotate-45 animate-pulse"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <!-- Título -->
-            <h2 class="text-4xl font-bold text-blue-400 mb-16 text-center">Certificados</h2>
-            
-            <!-- Grid de certificados -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
-                
-                <!-- Certificado MySQL -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl shadow-2xl hover:shadow-cyan-400/20 transition-all duration-300 group border border-cyan-400/20 hover:border-cyan-400/50 w-full max-w-sm hover:scale-105">
-                    <div class="flex flex-col items-center">
-                        <!-- Icono/Logo -->
-                        <div class="w-20 h-20 mb-6 bg-gradient-to-tr from-cyan-400/20 to-cyan-600/20 rounded-full flex items-center justify-center text-4xl group-hover:bg-cyan-400/30 transition-all duration-300">
-                            🗄️
-                        </div>
-                        
-                        <!-- Contenido -->
-                        <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors text-center">
-                            Curso de MySQL
-                        </h4>
-                        
-                        <!-- Detalles -->
-                        <div class="flex items-center mb-4">
-                            <span class="text-cyan-400 text-sm mr-2">📚</span>
-                            <span class="text-gray-400 text-sm">Udemy</span>
-                            <span class="mx-2 text-gray-500">•</span>
-                            <span class="text-gray-400 text-sm">2025</span>
-                        </div>
-                        
-                        <!-- Etiquetas de habilidades -->
-                        <div class="flex flex-wrap gap-2 mb-6 justify-center">
-                            <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-xs">Bases de Datos</span>
-                            <span class="px-3 py-1 bg-blue-400/20 text-blue-300 rounded-full text-xs">SQL</span>
-                            <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-xs">MySQL</span>
-                        </div>
-                        
-                        <!-- Botón -->
-                        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-ef74ddb2-634c-48c4-aa08-572379421141.jpg" target="_blank" 
-                           class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25">
-                            <span class="mr-2">🔗</span>
-                            Ver Certificado
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Certificado JavaScript -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 group border border-yellow-400/20 hover:border-yellow-400/50 w-full max-w-sm hover:scale-105">
-                    <div class="flex flex-col items-center">
-                        <!-- Icono/Logo -->
-                        <div class="w-20 h-20 mb-6 bg-gradient-to-tr from-yellow-400/20 to-yellow-600/20 rounded-full flex items-center justify-center text-4xl group-hover:bg-yellow-400/30 transition-all duration-300">
-                            ⚡
-                        </div>
-                        
-                        <!-- Contenido -->
-                        <h4 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors text-center">
-                            Curso JavaScript
-                        </h4>
-                        
-                        <!-- Detalles -->
-                        <div class="flex items-center mb-4">
-                            <span class="text-yellow-400 text-sm mr-2">📚</span>
-                            <span class="text-gray-400 text-sm">Udemy</span>
-                            <span class="mx-2 text-gray-500">•</span>
-                            <span class="text-gray-400 text-sm">2025</span>
-                        </div>
-                        
-                        <!-- Etiquetas de habilidades -->
-                        <div class="flex flex-wrap gap-2 mb-6 justify-center">
-                            <span class="px-3 py-1 bg-yellow-400/20 text-yellow-300 rounded-full text-xs">JavaScript</span>
-                            <span class="px-3 py-1 bg-orange-400/20 text-orange-300 rounded-full text-xs">Frontend</span>
-                            <span class="px-3 py-1 bg-yellow-400/20 text-yellow-300 rounded-full text-xs">Programación</span>
-                        </div>
-                        
-                        <!-- Botón -->
-                        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg" target="_blank" 
-                           class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
-                            <span class="mr-2">🔗</span>
-                            Ver Certificado
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Sección de estadísticas de certificaciones -->
-            <div class="mt-16 bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-8 rounded-2xl border border-blue-400/20">
-                <h4 class="text-2xl font-bold text-center text-blue-400 mb-8">Progreso de Certificaciones</h4>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="group">
-                        <div class="w-12 h-12 bg-blue-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-400/20 transition-all">
-                            <span class="text-2xl">📜</span>
-                        </div>
-                        <div class="text-3xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors">2</div>
-                        <div class="text-gray-400 text-sm">Certificados</div>
-                    </div>
-                    <div class="group">
-                        <div class="w-12 h-12 bg-green-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-400/20 transition-all">
-                            <span class="text-2xl">🎯</span>
-                        </div>
-                        <div class="text-3xl font-bold text-green-400 group-hover:text-green-300 transition-colors">2025</div>
-                        <div class="text-gray-400 text-sm">Año Activo</div>
-                    </div>
-                    <div class="group">
-                        <div class="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-400/20 transition-all">
-                            <span class="text-2xl">⚡</span>
-                        </div>
-                        <div class="text-3xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">100%</div>
-                        <div class="text-gray-400 text-sm">Completados</div>
-                    </div>
-                    <div class="group">
-                        <div class="w-12 h-12 bg-orange-400/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-400/20 transition-all">
-                            <span class="text-2xl">📚</span>
-                        </div>
-                        <div class="text-3xl font-bold text-orange-400 group-hover:text-orange-300 transition-colors">Udemy</div>
-                        <div class="text-gray-400 text-sm">Plataforma</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Call to Action -->
-            <div class="mt-12 text-center">
-                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-2xl border border-blue-400/20">
-                    <h5 class="text-xl font-semibold text-white mb-3">🚀 Aprendiendo</h5>
-                    <p class="text-gray-300 text-sm mb-4"> Actualizando mis habilidades con nuevas certificaciones y cursos especializados.</p>
-                    <div class="flex justify-center space-x-2">
-                        <span class="px-3 py-1 bg-emerald-400/20 text-blue-300 rounded-full text-xs">En progreso</span>
-                    </div>
-                </div>
-            </div>
+  <!-- Menú celular -->
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-line px-5" aria-label="Menú celular">
+    <a href="#proyectos" class="block py-3 text-muted hover:text-fg">Proyectos</a>
+    <a href="#servicios" class="block py-3 text-muted hover:text-fg">Servicios</a>
+    <a href="#sobre-mi" class="block py-3 text-muted hover:text-fg">Sobre mí</a>
+    <a href="#experiencia" class="block py-3 text-muted hover:text-fg">Experiencia</a>
+    <a href="#contacto" class="block py-3 mb-3 text-brand font-semibold">Cotizar proyecto</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- =========================================================
+     INICIO
+     ========================================================= -->
+<section id="inicio" class="max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+  <div class="grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-center">
+
+    <div>
+      <p class="hero-in inline-flex items-center gap-2 text-sm text-muted mb-6" style="--d:0ms">
+        <span class="relative flex w-2 h-2">
+          <span class="pulse-dot absolute inset-0 rounded-full bg-brand"></span>
+          <span class="relative w-2 h-2 rounded-full bg-brand"></span>
+        </span>
+        Disponible para proyectos nuevos
+      </p>
+
+      <h1 style="--d:120ms" class="hero-in font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+        Páginas web y sistemas a medida para negocios de O'Higgins.
+      </h1>
+
+      <p style="--d:260ms" class="hero-in text-lg text-muted leading-relaxed max-w-xl mb-9">
+        Soy Héctor Madrid, Ingeniero en Informática. Hago sitios que traen clientes y sistemas que ordenan
+        el trabajo diario: inventarios, registros y recordatorios automáticos. También doy soporte TI.
+      </p>
+
+      <div style="--d:400ms" class="hero-in flex flex-wrap gap-3">
+        <a href="#servicios" class="bg-brand text-brand-ink font-semibold px-6 py-3 rounded-md hover:bg-brand-dark transition-colors">
+          Ver servicios y precios
+        </a>
+        <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 border border-line px-6 py-3 rounded-md hover:border-brand transition-colors">
+          <i class="bxl bx-whatsapp text-xl text-brand" aria-hidden="true"></i>
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Foto con marco desplazado -->
+    <div style="--d:300ms" class="hero-in mx-auto w-64 sm:w-72 md:w-full max-w-sm">
+      <div class="relative">
+        <div class="photo-block absolute inset-0 rounded-lg bg-brand" aria-hidden="true"></div>
+        <img src="img/foto.webp" alt="Foto de Héctor Madrid" width="309" height="274" fetchpriority="high"
+             class="relative aspect-square w-full object-cover rounded-lg border border-line bg-panel" />
+      </div>
+      <p class="mt-8 text-sm text-muted text-center md:text-left">
+        Codegua, Región de O'Higgins
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROYECTOS
+     ========================================================= -->
+<section id="proyectos" class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <div class="reveal max-w-2xl mb-12">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-3">Proyectos</h2>
+      <p class="text-muted">Sistemas para uso real, sitios publicados y proyectos propios.</p>
+    </div>
+
+    <!-- Proyecto principal: sistema de inventario -->
+    <article class="reveal lift bg-panel border border-line rounded-lg p-7 md:p-9 mb-6 grid lg:grid-cols-[1.3fr_1fr] gap-8">
+      <div class="flex flex-col">
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <h3 class="font-display font-bold text-2xl md:text-3xl">Sistema de inventario TI escolar</h3>
+          <span class="text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
         </div>
-    </section>
-<!-- Servicios -->
-<section id="servicios" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(72, 140, 218, 0.1) 1px, transparent 0); background-size: 40px 40px;">
-    <div class="max-w-6xl mx-auto">
-        <div class="absolute top-20 left-20 w-24 h-24 border-4 border-blue-400/20 rounded-lg rotate-45 animate-pulse"></div>
-        <div class="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full float-animation"></div>
-        <div class="absolute bottom-1/4 left-1/12 w-16 h-16 border-2 border-green-400/30 rounded-lg rotate-45 animate-pulse"></div>
-        <div class="absolute bottom-1/3 right-1/2 w-12 h-12 border-2 border-green-400/30 rounded-full animate-spin" style="animation-duration: 4s;"></div>
-        <div class="absolute top-1/4 right-1/4 w-10 h-10 bg-purple-400/20 rounded-lg rotate-45 animate-pulse"></div>
-    
-    <h2 class="text-4xl font-bold text-center text-[#6cc644] mb-16">Servicios </h2>
+        <p class="text-muted leading-relaxed mb-5">
+          Sistema para el Colegio Jesús Andino que controla los equipos de la sala de computación: cada equipo
+          tiene su código, se registra a qué funcionario se presta o asigna, cuándo vuelve y qué insumos se usan.
+          Todo queda en un historial.
+        </p>
+        <p class="text-sm text-muted mt-auto">React, Node.js, Express, Supabase (PostgreSQL)</p>
+      </div>
+      <ul class="grid grid-cols-2 gap-3 self-center text-sm">
+        <li class="border border-line rounded-md p-4"><p class="font-semibold">Equipos</p><p class="text-muted">Código EQ-0001 y estado</p></li>
+        <li class="border border-line rounded-md p-4"><p class="font-semibold">Préstamos</p><p class="text-muted">Con fecha de devolución</p></li>
+        <li class="border border-line rounded-md p-4"><p class="font-semibold">Funcionarios</p><p class="text-muted">Profesores y administrativos</p></li>
+        <li class="border border-line rounded-md p-4"><p class="font-semibold">Reportes</p><p class="text-muted">Con roles de acceso</p></li>
+      </ul>
+    </article>
 
-    <!-- ===== Paquetes web ===== -->
-    <p class="text-center text-gray-300 max-w-2xl mx-auto -mt-10 mb-12">
-      Páginas web y sistemas a medida para pymes de la Región de O'Higgins. Trato directo, sin intermediarios.
-    </p>
+    <!-- Proyectos destacados -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 relative z-10">
+      <article style="--d:0ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-display font-bold text-2xl">Medirecord</h3>
+          <span class="shrink-0 text-xs font-semibold text-brand border border-brand/40 rounded px-2 py-1">Completado</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-5 flex-grow">
+          Recordatorios automáticos por WhatsApp para pacientes de centros médicos y hospitales,
+          para reducir las horas perdidas.
+        </p>
+        <p class="text-sm text-muted mb-6">Node.js, PHP, MySQL, JavaScript, Tailwind CSS</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="https://github.com/hectormadrid/Medirecord" target="_blank" rel="noopener" class="text-brand hover:underline">Ver código</a>
+        </div>
+      </article>
+
+      <article style="--d:100ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-display font-bold text-2xl">Portafolio para prevencionista</h3>
+          <span class="shrink-0 text-xs font-semibold text-brand border border-brand/40 rounded px-2 py-1">Publicado</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-5 flex-grow">
+          Sitio profesional para una prevencionista de riesgos, con su experiencia, cursos y certificaciones.
+        </p>
+        <p class="text-sm text-muted mb-6">HTML, JavaScript, Tailwind CSS</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="https://portafolio-ximena-soto.vercel.app" target="_blank" rel="noopener" class="text-brand hover:underline">Ver sitio</a>
+        </div>
+      </article>
+
+      <article style="--d:0ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-display font-bold text-2xl">Mundo Librería</h3>
+          <span class="shrink-0 text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-5 flex-grow">
+          Tienda online para una librería: los clientes ven y compran productos, y el administrador
+          gestiona el catálogo.
+        </p>
+        <p class="text-sm text-muted mb-6">PHP, MySQL, JavaScript, Tailwind CSS</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="https://github.com/hectormadrid/Mundo-Libreria" target="_blank" rel="noopener" class="text-brand hover:underline">Ver código</a>
+        </div>
+      </article>
+
+      <article style="--d:100ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-display font-bold text-2xl">Habitosapp</h3>
+          <span class="shrink-0 text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-5 flex-grow">
+          Aplicación para organizar rutinas y tareas, con una vista mensual de los hábitos cumplidos.
+        </p>
+        <p class="text-sm text-muted mb-6">React, Node.js, CSS</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="https://habitosapp-eta.vercel.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver sitio</a>
+          <a href="https://github.com/hectormadrid/Habitosapp" target="_blank" rel="noopener" class="text-muted hover:text-fg">Ver código</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Otros proyectos (lista compacta) -->
+    <h3 class="reveal font-display font-bold text-xl mt-14 mb-4">Otros proyectos</h3>
+    <ul class="reveal divide-y divide-line border-y border-line">
+      <li class="py-4 grid sm:grid-cols-[1fr_auto] gap-1 sm:gap-6 sm:items-center">
+        <div>
+          <a href="https://github.com/hectormadrid/Todo-App" target="_blank" rel="noopener" class="font-semibold hover:text-brand">API de tareas (Todo App)</a>
+          <p class="text-sm text-muted">API REST para crear, editar y completar tareas.</p>
+        </div>
+        <span class="text-sm text-muted">Python, SQLite</span>
+      </li>
+      <li class="py-4 grid sm:grid-cols-[1fr_auto] gap-1 sm:gap-6 sm:items-center">
+        <div>
+          <a href="https://github.com/hectormadrid/Detector-de-caras-tiempo-real" target="_blank" rel="noopener" class="font-semibold hover:text-brand">Detector de caras en tiempo real</a>
+          <p class="text-sm text-muted">Detecta rostros en la imagen de una webcam.</p>
+        </div>
+        <span class="text-sm text-muted">Python</span>
+      </li>
+      <li class="py-4 grid sm:grid-cols-[1fr_auto] gap-1 sm:gap-6 sm:items-center">
+        <div>
+          <a href="https://github.com/hectormadrid/Coach_lol" target="_blank" rel="noopener" class="font-semibold hover:text-brand">Coach de League of Legends</a>
+          <p class="text-sm text-muted">Asistente con inteligencia artificial para jugadores nuevos. En desarrollo.</p>
+        </div>
+        <span class="text-sm text-muted">Python, IA</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICIOS
+     ========================================================= -->
+<section id="servicios" class="border-t border-line bg-panel/40">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <div class="reveal max-w-2xl mb-12">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-3">Servicios y precios</h2>
+      <p class="text-muted">
+        Precios de referencia para pymes. Si tu presupuesto es otro, lo conversamos y ajustamos el alcance.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
       <!-- Web Básica -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg border-t-4 border-blue-400 flex flex-col">
-        <h3 class="text-xl font-semibold text-white">Web Básica</h3>
-        <p class="text-sm text-gray-400 mb-4">Para estar presente en internet</p>
-        <p class="text-xs text-gray-400">desde</p>
-        <p class="text-3xl font-bold text-white mb-6">$120.000</p>
-        <ul class="text-gray-300 text-sm space-y-2 mb-6 flex-grow">
-          <li>✔ Página única (landing)</li>
-          <li>✔ Servicios, contacto y mapa</li>
-          <li>✔ Botón de WhatsApp</li>
-          <li>✔ Adaptada a celulares</li>
+      <div style="--d:0ms" class="reveal lift bg-panel border border-line rounded-lg p-6 flex flex-col">
+        <h3 class="font-display font-bold text-xl">Web Básica</h3>
+        <p class="text-sm text-muted mb-5">Para estar presente en internet</p>
+        <p class="text-sm text-muted">desde</p>
+        <p class="font-display font-bold text-3xl mb-6">$120.000</p>
+        <ul class="text-sm space-y-2 mb-7 flex-grow">
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Página única (landing)</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Servicios, contacto y mapa</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Botón de WhatsApp</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Adaptada a celulares</li>
         </ul>
         <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20me%20interesa%20la%20Web%20B%C3%A1sica"
            target="_blank" rel="noopener"
-           class="text-center bg-[#6cc644] hover:bg-green-600 text-[#1e1e2f] font-semibold py-2 rounded-lg transition">
+           class="text-center border border-brand text-brand font-semibold py-2.5 rounded-md hover:bg-brand hover:text-brand-ink transition-colors">
           Cotizar por WhatsApp
         </a>
       </div>
 
-      <!-- Web Profesional (destacada) -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-2xl border-2 border-[#6cc644] flex flex-col relative">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6cc644] text-[#1e1e2f] text-xs font-bold px-3 py-1 rounded-full">
-          Recomendado
-        </span>
-        <h3 class="text-xl font-semibold text-white">Web Profesional</h3>
-        <p class="text-sm text-gray-400 mb-4">Para negocios que quieren clientes</p>
-        <p class="text-xs text-gray-400">desde</p>
-        <p class="text-3xl font-bold text-white mb-6">$250.000</p>
-        <ul class="text-gray-300 text-sm space-y-2 mb-6 flex-grow">
-          <li>✔ 4 a 5 secciones</li>
-          <li>✔ Diseño a medida</li>
-          <li>✔ Formulario de contacto</li>
-          <li>✔ Aparecer en Google (SEO básico)</li>
+      <!-- Web Profesional (recomendada) -->
+      <div style="--d:100ms" class="reveal lift bg-panel border-2 border-brand rounded-lg p-6 flex flex-col relative">
+        <span class="absolute -top-3 left-6 bg-brand text-brand-ink text-xs font-bold px-2.5 py-1 rounded">Recomendado</span>
+        <h3 class="font-display font-bold text-xl">Web Profesional</h3>
+        <p class="text-sm text-muted mb-5">Para negocios que buscan clientes</p>
+        <p class="text-sm text-muted">desde</p>
+        <p class="font-display font-bold text-3xl mb-6">$250.000</p>
+        <ul class="text-sm space-y-2 mb-7 flex-grow">
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>4 a 5 secciones</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Diseño a medida</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Formulario de contacto</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Aparecer en Google (SEO básico)</li>
         </ul>
         <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20me%20interesa%20la%20Web%20Profesional"
            target="_blank" rel="noopener"
-           class="text-center bg-[#6cc644] hover:bg-green-600 text-[#1e1e2f] font-semibold py-2 rounded-lg transition">
+           class="text-center bg-brand text-brand-ink font-semibold py-2.5 rounded-md hover:bg-brand-dark transition-colors">
           Cotizar por WhatsApp
         </a>
       </div>
 
       <!-- Sistema a medida -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg border-t-4 border-purple-400 flex flex-col">
-        <h3 class="text-xl font-semibold text-white">Sistema a medida</h3>
-        <p class="text-sm text-gray-400 mb-4">Para ordenar tu negocio</p>
-        <p class="text-xs text-gray-400">desde</p>
-        <p class="text-3xl font-bold text-white mb-6">$500.000</p>
-        <ul class="text-gray-300 text-sm space-y-2 mb-6 flex-grow">
-          <li>✔ Inventario, reservas o registros</li>
-          <li>✔ Acceso con usuario y clave</li>
-          <li>✔ Base de datos propia</li>
-          <li>✔ Se cotiza según lo que necesites</li>
+      <div style="--d:200ms" class="reveal lift bg-panel border border-line rounded-lg p-6 flex flex-col">
+        <h3 class="font-display font-bold text-xl">Sistema a medida</h3>
+        <p class="text-sm text-muted mb-5">Para ordenar tu negocio</p>
+        <p class="text-sm text-muted">desde</p>
+        <p class="font-display font-bold text-3xl mb-6">$500.000</p>
+        <ul class="text-sm space-y-2 mb-7 flex-grow">
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Inventario, reservas o registros</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Acceso con usuario y clave</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Base de datos propia</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Precio según lo que necesites</li>
         </ul>
         <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20me%20interesa%20un%20sistema%20a%20medida"
            target="_blank" rel="noopener"
-           class="text-center bg-[#6cc644] hover:bg-green-600 text-[#1e1e2f] font-semibold py-2 rounded-lg transition">
+           class="text-center border border-brand text-brand font-semibold py-2.5 rounded-md hover:bg-brand hover:text-brand-ink transition-colors">
           Cotizar por WhatsApp
         </a>
       </div>
 
       <!-- Mantención -->
-      <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg border-t-4 border-cyan-400 flex flex-col">
-        <h3 class="text-xl font-semibold text-white">Mantención</h3>
-        <p class="text-sm text-gray-400 mb-4">Olvídate de la parte técnica</p>
-        <p class="text-xs text-gray-400">desde</p>
-        <p class="text-3xl font-bold text-white mb-6">$15.000<span class="text-base font-normal text-gray-400">/mes</span></p>
-        <ul class="text-gray-300 text-sm space-y-2 mb-6 flex-grow">
-          <li>✔ Hosting y dominio al día</li>
-          <li>✔ Cambios menores de contenido</li>
-          <li>✔ Respaldos</li>
-          <li>✔ Soporte por WhatsApp</li>
+      <div style="--d:300ms" class="reveal lift bg-panel border border-line rounded-lg p-6 flex flex-col">
+        <h3 class="font-display font-bold text-xl">Mantención</h3>
+        <p class="text-sm text-muted mb-5">Olvídate de la parte técnica</p>
+        <p class="text-sm text-muted">desde</p>
+        <p class="font-display font-bold text-3xl mb-6">$15.000<span class="text-base font-normal text-muted"> al mes</span></p>
+        <ul class="text-sm space-y-2 mb-7 flex-grow">
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Hosting y dominio al día</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Cambios menores de contenido</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Respaldos</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Soporte por WhatsApp</li>
         </ul>
         <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20me%20interesa%20el%20plan%20de%20mantenci%C3%B3n"
            target="_blank" rel="noopener"
-           class="text-center bg-[#6cc644] hover:bg-green-600 text-[#1e1e2f] font-semibold py-2 rounded-lg transition">
+           class="text-center border border-brand text-brand font-semibold py-2.5 rounded-md hover:bg-brand hover:text-brand-ink transition-colors">
           Cotizar por WhatsApp
         </a>
       </div>
     </div>
 
-    <h3 class="text-2xl font-semibold text-center text-white mb-10">Otros servicios</h3>
-    <!-- ===== Fin paquetes web ===== -->
-    
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-blue-400">
-    <div class="text-4xl mb-4">💻</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Formateo y Instalación</h3>
-    <p class="text-gray-300 mb-4">Soluciones integrales de formateo e instalación de sistemas operativos, asegurando un rendimiento óptimo de tus equipos.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-green-400">
-    <div class="text-4xl mb-4">🧹</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Limpieza y Mantenimiento</h3>
-    <p class="text-gray-300 mb-4">Limpieza profunda de hardware y optimización de software para prolongar la vida útil de tus dispositivos y mejorar su eficiencia.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-red-400">
-    <div class="text-4xl mb-4">⚙️</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Armado de PC</h3>
-    <p class="text-gray-300 mb-4">Asesoría y ensamblaje personalizado de computadores de escritorio, adaptados a tus necesidades y presupuesto.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-orange-400">
-    <div class="text-4xl mb-4">🌐</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Desarrollo Web</h3>
-    <p class="text-gray-300 mb-4">Desarrollo de soluciones web modernas y responsivas, desde sitios informativos hasta aplicaciones complejas, para potenciar tu presencia digital.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-cyan-400">
-    <div class="text-4xl mb-4">🛠️</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Soporte Técnico</h3>
-    <p class="text-gray-300 mb-4">Soporte técnico experto para diagnosticar y resolver problemas de software y hardware, garantizando la continuidad de tus operaciones.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-pink-400">
-    <div class="text-4xl mb-4">📱</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Sistemas Automatizados</h3>
-    <p class="text-gray-300 mb-4">Implementación de sistemas automatizados para optimizar procesos y mejorar la comunicación, como recordatorios y notificaciones personalizadas.</p>
-  </div>
-
- <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4" style="border-color: #a78bfa;">
-    <div class="text-4xl mb-4">📄</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Portafolio Profesional</h3>
-    <p class="text-gray-300 mb-4">Creación de portafolios atractivos y profesionales para destacar en cada postulación laboral y mostrar tus mejores proyectos.</p>
-  </div>
-
-  <div class="bg-[#2d2d44] p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4" style="border-color: #facc15;">
-    <div class="text-4xl mb-4">📊</div>
-    <h3 class="text-xl font-semibold text-white mb-3">Dashboards y Reportes</h3>
-    <p class="text-gray-300 mb-4">Creación de reportes visuales claros y rápidos a partir de tus datos: ventas, finanzas, operaciones y más.</p>
-  </div>
-
-</div>
+    <!-- Cómo trabajo (es una secuencia real, por eso va numerada) -->
+    <div class="mt-20 grid lg:grid-cols-[1fr_2fr] gap-10">
+      <div class="reveal">
+        <h3 class="font-display font-bold text-2xl mb-3">Cómo trabajo</h3>
+        <p class="text-muted">Trato directo conmigo de principio a fin, sin intermediarios.</p>
+      </div>
+      <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-8">
+        <li style="--d:0ms" class="reveal flex gap-4">
+          <span class="font-display font-extrabold text-3xl text-brand leading-none">1</span>
+          <div>
+            <h4 class="font-semibold mb-1">Conversamos</h4>
+            <p class="text-sm text-muted">Me cuentas qué necesita tu negocio, por WhatsApp o en persona.</p>
+          </div>
+        </li>
+        <li style="--d:120ms" class="reveal flex gap-4">
+          <span class="font-display font-extrabold text-3xl text-brand leading-none">2</span>
+          <div>
+            <h4 class="font-semibold mb-1">Te envío una propuesta</h4>
+            <p class="text-sm text-muted">Con alcance, precio y plazo por escrito. Se parte con un 50% de anticipo.</p>
+          </div>
+        </li>
+        <li style="--d:240ms" class="reveal flex gap-4">
+          <span class="font-display font-extrabold text-3xl text-brand leading-none">3</span>
+          <div>
+            <h4 class="font-semibold mb-1">Desarrollo con avances</h4>
+            <p class="text-sm text-muted">Ves el progreso y pides ajustes antes de la entrega.</p>
+          </div>
+        </li>
+        <li style="--d:360ms" class="reveal flex gap-4">
+          <span class="font-display font-extrabold text-3xl text-brand leading-none">4</span>
+          <div>
+            <h4 class="font-semibold mb-1">Entrega y soporte</h4>
+            <p class="text-sm text-muted">Publico el sitio y, si quieres, me encargo de mantenerlo.</p>
+          </div>
+        </li>
+      </ol>
     </div>
+
+    <!-- Otros servicios (lista compacta) -->
+    <div class="reveal mt-20">
+      <h3 class="font-display font-bold text-2xl mb-6">También hago</h3>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5 text-sm">
+        <li><p class="font-semibold">Sistemas automatizados</p><p class="text-muted">Recordatorios y notificaciones por WhatsApp o correo.</p></li>
+        <li><p class="font-semibold">Dashboards y reportes</p><p class="text-muted">Tus ventas u operaciones en gráficos claros.</p></li>
+        <li><p class="font-semibold">Portafolios profesionales</p><p class="text-muted">Para postular a trabajos con tus proyectos a la vista.</p></li>
+        <li><p class="font-semibold">Soporte técnico</p><p class="text-muted">Diagnóstico y solución de problemas de software y hardware.</p></li>
+        <li><p class="font-semibold">Formateo e instalación</p><p class="text-muted">Sistema operativo y programas listos para usar.</p></li>
+        <li><p class="font-semibold">Limpieza y armado de PC</p><p class="text-muted">Mantención de equipos y armado según tu presupuesto.</p></li>
+      </ul>
+    </div>
+  </div>
 </section>
-<!--  Contacto -->
-    <section id="contacto" class="py-20 px-6 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" style="background-image: radial-gradient(circle at 1px 1px, rgba(34, 197, 94, 0.1) 1px, transparent 0); background-size: 50px 50px;">
-        <div class="absolute top-16 right-16 w-24 h-24 border-4 border-emerald-400/30 rounded-full animate-spin" style="animation-duration: 4s;"></div>
-        <div class="absolute bottom-16 left-16 w-20 h-20 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-lg rotate-45 float-animation"></div>
-        <div class="absolute top-1/4 right-1/4 w-14 h-14 bg-teal-400/20 rounded-full animate-pulse"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-4xl font-bold text-emerald-400 mb-12 text-center">¡Hablemos!</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                
-                <!-- Columna del Formulario -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-l-4 border-emerald-400 shadow-2xl">
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        ¿Tienes un proyecto en mente o alguna pregunta? Completa el formulario.
-                    </p>
-                    <form action="https://formspree.io/f/mblqrkan" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
-                            <input type="text" name="name" id="name" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                            <input type="email" name="email" id="email" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensaje</label>
-                            <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 bg-slate-900/50 border border-slate-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 transition"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                Enviar Mensaje
-                            </button>
-                        </div>
-                    </form>
-                </div>
 
-                <!-- Columna de Detalles de Contacto -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl border-r-4 border-emerald-400 shadow-2xl">
-                     <p class="text-gray-300 leading-relaxed mb-6">
-                        O contáctame directamente a través de estos medios.
-                    </p>
-                    <div class="space-y-4">
-                        <!-- Email -->
-                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-                            <i class=' bxl  bx-gmail bx-lg'  style='color:#db3939' ></i> 
-                            <div class="p-2">
-                                <h3 class="text-white font-semibold">Email</h3>
-                                <p class="text-gray-400 text-sm">hectorfmf2002@gmail.com</p>
-                            </div>
-                        </div>
-                        <!-- WhatsApp -->
-                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-                            <i class='bxl  bx-whatsapp bx-lg'  style='color:#4ed530'  ></i> 
-                            <div class="p-2">
-                                <h3 class="text-white font-semibold">WhatsApp</h3>
-                                <a href = https://web.whatsapp.com/  class="text-gray-400 text-sm">+569 81736629</a>
-                            </div>
-                        </div>
-                        <!-- GitHub -->
-                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-                            <i class='bxl  bx-github bx-lg'  style='color:#000000'  ></i> 
-                            <div class="p-2">
-                                <h3 class="text-white font-semibold ">GitHub</h3>
-                                <a href="https://github.com/hectormadrid" class="text-gray-400 text-sm"> Click Para ver mi GitHub </a>
-                            </div>
-                        </div>
-                        <div class="flex items-center p-3 rounded-lg hover:bg-slate-600/30 transition-all group">
-                            <i class='bxl  bx-linkedin-square bx-lg'  style='color:#1ecef1'  ></i> 
-                            <div class="p-2">
-                                <h3 class="text-white font-semibold">LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/hector-madrid-025647356/" class="text-gray-400 text-sm">Click Para ver mi LinkedIn</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- =========================================================
+     SOBRE MÍ + HABILIDADES
+     ========================================================= -->
+<section id="sobre-mi" class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+
+    <div class="reveal">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-6">Sobre mí</h2>
+      <div class="space-y-4 text-muted leading-relaxed max-w-prose">
+        <p>
+          Soy Ingeniero en Informática titulado del Instituto Santo Tomás. Empecé a programar en la
+          especialidad de Programación del Liceo Comercial Diego Portales de Rancagua, y desde entonces
+          combino el desarrollo web con el soporte TI.
+        </p>
+        <p>
+          En terreno he dado soporte a usuarios, administrado redes y controlado inventario de equipos.
+          Eso me ayuda a construir sistemas pensados para las personas que los usan todos los días.
+        </p>
+        <p>
+          Hoy soy Encargado de Informática del Colegio Jesús Andino, donde además desarrollo herramientas
+          para la comunidad escolar.
+        </p>
+        <p>
+          Me considero responsable, organizado y puntual, y sigo aprendiendo tecnologías nuevas con cursos
+          y proyectos propios.
+        </p>
+      </div>
+    </div>
+
+    <div style="--d:150ms" class="reveal">
+      <h3 class="font-display font-bold text-2xl mb-6">Tecnologías</h3>
+      <dl class="space-y-6">
+        <div>
+          <dt class="text-sm text-muted mb-2">Frontend</dt>
+          <dd class="flex flex-wrap gap-2">
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Tailwind CSS</span><span class="chip">JavaScript</span><span class="chip">React</span>
+          </dd>
         </div>
-    </section>
+        <div>
+          <dt class="text-sm text-muted mb-2">Backend</dt>
+          <dd class="flex flex-wrap gap-2">
+            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Supabase</span><span class="chip">PHP</span><span class="chip">Laravel (básico)</span><span class="chip">Python</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted mb-2">Bases de datos</dt>
+          <dd class="flex flex-wrap gap-2">
+            <span class="chip">MySQL</span><span class="chip">SQLite</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted mb-2">Soporte TI</dt>
+          <dd class="flex flex-wrap gap-2">
+            <span class="chip">Windows</span><span class="chip">Redes</span><span class="chip">UniFi</span><span class="chip">Impresoras IP</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
 
-<!-- Footer -->
-<footer class="py-6 text-center bg-[#252538] text-gray-400">
-    &copy; 2026 Mi Portafolio todos los derechos reservados. | Diseñado por Héctor Fernando Madrid Flores
+<!-- =========================================================
+     EXPERIENCIA + FORMACIÓN
+     ========================================================= -->
+<section id="experiencia" class="border-t border-line bg-panel/40">
+  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+
+    <!-- Experiencia -->
+    <div>
+      <h2 class="reveal font-display font-bold text-3xl md:text-4xl tracking-tight mb-8">Experiencia</h2>
+
+      <div class="timeline relative">
+        <!-- Línea vertical que se dibuja al aparecer -->
+        <span class="timeline-line absolute left-0 top-2 bottom-0 w-0.5 bg-line" aria-hidden="true"></span>
+
+        <article class="reveal relative pl-8 pb-12">
+          <span class="absolute left-0 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-brand ring-4 ring-brand/20"></span>
+          <p class="text-sm text-muted mb-1">Julio 2026 a diciembre 2026, actual</p>
+          <h3 class="font-display font-bold text-xl">Encargado de Informática</h3>
+          <p class="text-brand font-semibold mb-4">Colegio Jesús Andino</p>
+          <ul class="list-disc pl-5 space-y-2 text-muted marker:text-line">
+            <li>Soporte a profesores en el uso de equipos y programas.</li>
+            <li>Diagnóstico y resolución de problemas informáticos.</li>
+            <li>Mantención de los equipos del colegio y de la sala de computación.</li>
+            <li>Desarrollo de herramientas escolares, como el sistema de inventario TI.</li>
+          </ul>
+        </article>
+
+        <article class="reveal relative pl-8" style="--d:150ms">
+          <span class="absolute left-0 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-brand bg-ink"></span>
+          <p class="text-sm text-muted mb-1">Oct 2024 a feb 2025 y oct 2025 a ene 2026</p>
+          <h3 class="font-display font-bold text-xl">Administrativo informático y soporte de usuarios</h3>
+          <p class="text-brand font-semibold mb-4">Packing Gárate Hermanos</p>
+          <ul class="list-disc pl-5 space-y-2 text-muted marker:text-line">
+            <li>Soporte a usuarios en equipos con Windows.</li>
+            <li>Respaldo, instalación de software y preparación de equipos nuevos.</li>
+            <li>Administración de la red wifi corporativa con controlador UniFi.</li>
+            <li>Atención de incidencias en la línea de producción de cerezas: impresoras térmicas IP y fallas de red.</li>
+            <li>Control del inventario TI: computadores, impresoras, tablets, PDA, monitores y equipos de red.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Formación -->
+    <div id="formacion" class="reveal" style="--d:150ms">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-8">Formación</h2>
+
+      <ol class="space-y-7">
+        <li class="flex gap-4">
+          <img src="img/santo-tomas.jpg" alt="" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-md object-cover bg-fg shrink-0" />
+          <div>
+            <h3 class="font-semibold">Ingeniería en Informática</h3>
+            <p class="text-muted text-sm">Instituto Santo Tomás, 2020 a 2024. Titulado.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <img src="img/comercial.jpg" alt="" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-md object-cover bg-fg shrink-0" />
+          <div>
+            <h3 class="font-semibold">Enseñanza media, especialidad Programación</h3>
+            <p class="text-muted text-sm">Liceo Bicentenario Comercial Diego Portales, Rancagua, 2016 a 2019.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="font-display font-bold text-xl mt-12 mb-4">Certificados</h3>
+      <ul class="divide-y divide-line border-y border-line">
+        <li class="py-4 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-semibold">Curso de MySQL</p>
+            <p class="text-sm text-muted">Udemy, 2025</p>
+          </div>
+          <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-ef74ddb2-634c-48c4-aa08-572379421141.jpg"
+             target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:underline shrink-0">Ver certificado</a>
+        </li>
+        <li class="py-4 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-semibold">Curso de JavaScript</p>
+            <p class="text-sm text-muted">Udemy, 2025</p>
+          </div>
+          <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-a263db2c-77e3-47fb-b670-f4c27193ef76.jpg"
+             target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:underline shrink-0">Ver certificado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACTO
+     ========================================================= -->
+<section id="contacto" class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+
+    <div class="reveal">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">¿Tienes un proyecto en mente?</h2>
+      <p class="text-muted mb-8 max-w-md">
+        Cuéntame qué necesitas y te respondo con una propuesta. Por WhatsApp suele ser más rápido.
+      </p>
+
+      <a href="https://wa.me/56981736629?text=Hola%20Hector%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 bg-brand text-brand-ink font-semibold px-6 py-3 rounded-md hover:bg-brand-dark transition-colors mb-10">
+        <i class="bxl bx-whatsapp text-2xl" aria-hidden="true"></i>
+        +56 9 8173 6629
+      </a>
+
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-3">
+          <i class="bxl bx-gmail text-xl text-muted" aria-hidden="true"></i>
+          <a href="mailto:hectorfmf2002@gmail.com" class="hover:text-brand">hectorfmf2002@gmail.com</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="bxl bx-linkedin-square text-xl text-muted" aria-hidden="true"></i>
+          <a href="https://www.linkedin.com/in/hector-madrid-025647356/" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="bxl bx-github text-xl text-muted" aria-hidden="true"></i>
+          <a href="https://github.com/hectormadrid" target="_blank" rel="noopener" class="hover:text-brand">GitHub</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Formulario (Formspree) -->
+    <form style="--d:150ms" action="https://formspree.io/f/mblqrkan" method="POST" class="reveal bg-panel border border-line rounded-lg p-7 space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-semibold mb-2">Nombre</label>
+        <input type="text" name="name" id="name" required autocomplete="name" class="field" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-semibold mb-2">Correo</label>
+        <input type="email" name="email" id="email" required autocomplete="email" class="field" />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-semibold mb-2">¿Qué necesitas?</label>
+        <textarea name="message" id="message" rows="5" required class="field"
+                  placeholder="Ej: una página para mi ferretería con catálogo y botón de WhatsApp"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-brand text-brand-ink font-semibold py-3 rounded-md hover:bg-brand-dark transition-colors">
+        Enviar mensaje
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row gap-2 justify-between text-sm text-muted">
+    <p>© 2026 Héctor Madrid Flores</p>
+  </div>
 </footer>
-<!-- Scripts -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script type="module" src="js/main.js"></script>
+
+<script type="module" src="js/app.js"></script>
 </body>
 </html>

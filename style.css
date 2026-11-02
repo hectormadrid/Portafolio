@@ -1,69 +1,144 @@
-@import "tailwindcss";
+/* =========================================================
+   ESTILOS DEL PORTAFOLIO
+   Se compila con:  npm run build:css   (o npm run dev:css mientras editas)
+   ========================================================= */
 
-/* --- From css/menu.css --- */
-#mobile-menu {
-    transition: height 0.3s ease-in-out !important;
-    overflow: hidden;
-    display: block !important;
+/* Tailwind solo revisa estos archivos para generar las clases.
+   Así el CSS final queda liviano y no incluye clases de otros archivos. */
+@import "tailwindcss" source(none);
+@source "./index.html";
+@source "./js";
+
+
+/* ---------------------------------------------------------
+   1. TOKENS: colores y tipografías
+   Se usan como clases: bg-ink, bg-panel, border-line, text-fg,
+   text-muted, bg-brand, text-brand-ink, font-display, font-body
+   --------------------------------------------------------- */
+@theme {
+  --color-ink: #1c1c2b;        /* fondo general */
+  --color-panel: #25253a;      /* tarjetas y bloques */
+  --color-line: #3a3a55;       /* bordes y divisores */
+  --color-fg: #ececf3;         /* texto principal */
+  --color-muted: #a9a9bf;      /* texto secundario */
+  --color-brand: #6cc644;      /* verde de marca */
+  --color-brand-dark: #5aae35; /* verde al pasar el mouse */
+  --color-brand-ink: #10200a;  /* texto sobre verde */
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 }
 
-#mobile-menu.hidden {
-    display: none !important;
+
+/* ---------------------------------------------------------
+   2. BASE
+   --------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* los enlaces #seccion no quedan bajo el encabezado */
+  }
+  body { font-family: var(--font-body); }
+
+  /* Foco visible para quien navega con teclado */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
 }
 
-/* --- From inline style in index.html --- */
-body { font-family: 'Poppins', sans-serif; }
 
-.hidden-element {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* ---------------------------------------------------------
+   3. COMPONENTES reutilizables
+   --------------------------------------------------------- */
+@layer components {
+  .chip {
+    @apply text-sm border border-line rounded px-3 py-1.5 text-fg;
+  }
+  .field {
+    @apply w-full bg-ink border border-line rounded-md px-4 py-2.5 text-fg placeholder:text-muted/70
+           focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-colors;
+  }
 }
 
-.show-element {
-    opacity: 1;
-    transform: translateY(0);
+
+/* ---------------------------------------------------------
+   4. MENÚ CELULAR (lo abre/cierra js/menuBurger.js)
+   --------------------------------------------------------- */
+#mobile-menu:not(.hidden) { animation: menu-in 0.25s ease; }
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: none; }
 }
 
 
-/* --- From css/animation.css (cleaned) --- */
-html {
-  scroll-behavior: smooth;
+/* ---------------------------------------------------------
+   5. ANIMACIONES
+   --------------------------------------------------------- */
+
+/* 5.1 Entrada del inicio: cada elemento sube y aparece en orden.
+       El retraso de cada uno se define en el HTML con style="--d:120ms" */
+.hero-in {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-in 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes hero-in { to { opacity: 1; transform: none; } }
+
+/* 5.2 El bloque verde detrás de la foto se desliza a su lugar */
+.photo-block { animation: photo-slide 0.8s cubic-bezier(.2,.7,.2,1) 0.8s forwards; }
+@keyframes photo-slide { to { transform: translate(1rem, 1rem); } }
+
+/* 5.3 Punto "Disponible" que late */
+.pulse-dot { animation: pulse-dot 2s ease-out infinite; }
+@keyframes pulse-dot {
+  from { transform: scale(1); opacity: 0.7; }
+  to   { transform: scale(2.8); opacity: 0; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 5.4 Aparición al hacer scroll (la clase .js la pone un script en <head>,
+       así sin JavaScript el contenido igual se ve) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* 5.5 Tarjetas que se elevan al pasar el mouse.
+       Usa "translate" (no "transform") para no chocar con la aparición */
+.lift { transition: translate 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.js .reveal.lift {
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1),
+              translate 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition-delay: var(--d, 0ms), var(--d, 0ms), 0s, 0s, 0s;
+}
+.lift:hover {
+  translate: 0 -4px;
+  border-color: color-mix(in srgb, var(--color-brand) 55%, var(--color-line));
+  box-shadow: 0 18px 40px -20px rgb(0 0 0 / 0.7);
 }
 
-@keyframes slideInLeft {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+/* 5.6 Línea de tiempo de experiencia que se dibuja de arriba hacia abajo */
+.timeline-line {
+  transform-origin: top;
+  background-image: linear-gradient(var(--color-brand), var(--color-line));
 }
+.js .timeline-line { transform: scaleY(0); transition: transform 1.2s ease 0.2s; }
+.js .timeline.is-visible .timeline-line { transform: scaleY(1); }
 
-@keyframes slideInRight {
-  from { transform: translateX(50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
+/* 5.7 Sombra del encabezado al bajar */
+#site-header.is-scrolled { box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.8); }
 
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Quien prefiere menos movimiento (ajuste del sistema) ve todo sin animar */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-in, .photo-block, .pulse-dot, #mobile-menu:not(.hidden) { animation: none; }
+  .hero-in { opacity: 1; transform: none; }
+  .photo-block { transform: translate(1rem, 1rem); }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js .timeline-line { transform: none; }
+  .lift:hover { translate: none; }
 }
-/* Oculta el overflow para que los slides cortados no rompan el layout */
-.projects-carousel {
-  overflow: hidden;
-}
-
-/* Resetea posición de los botones nativos de Swiper */
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-.animate-fadeIn { animation: fadeIn 1.2s ease-in-out; }
-.animate-slideInLeft { animation: slideInLeft 1.2s ease-in-out; }
-.animate-slideInRight { animation: slideInRight 1.2s ease-in-out; }
-.animate-slideInUp { animation: slideInUp 1s ease forwards; }
