@@ -1,7 +1,7 @@
 // Animaciones al hacer scroll y sombra del encabezado.
 export function initAnimations() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets = document.querySelectorAll('.reveal, .timeline');
+  const targets = document.querySelectorAll('.reveal, .timeline, .git-graph');
 
   // Sin soporte o con "reducir movimiento": mostrar todo de inmediato
   if (reduceMotion || !('IntersectionObserver' in window)) {

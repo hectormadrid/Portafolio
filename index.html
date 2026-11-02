@@ -31,6 +31,35 @@
 
 <body class="bg-ink text-fg font-body antialiased">
 
+<!-- Dibujo de circuito reutilizable (se usa con <use href="#circuit">) -->
+<svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="circuit" viewBox="0 0 600 400">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 80 H140 L180 120 H300" />
+        <path d="M0 200 H90 L130 160 H230 L260 190 H300" />
+        <path d="M60 400 V320 L100 280 H220" />
+        <path d="M600 60 H470 L430 100 H380" />
+        <path d="M600 300 H500 L460 260 H380" />
+        <path d="M340 400 V250 M340 210 V250" />
+        <rect x="300" y="100" width="80" height="110" rx="8" />
+        <path d="M315 100 V86 M335 100 V86 M355 100 V86 M365 100 V86 M315 210 V224 M355 210 V224 M365 210 V224" />
+        <!-- Señales que recorren las pistas -->
+        <path class="signal" d="M0 80 H140 L180 120 H300" />
+        <path class="signal signal-2" d="M600 300 H500 L460 260 H380" />
+      </g>
+      <g fill="currentColor">
+        <circle cx="220" cy="280" r="4" />
+        <circle cx="60" cy="400" r="4" />
+        <circle cx="380" cy="260" r="4" />
+        <circle cx="140" cy="80" r="3" />
+        <circle cx="230" cy="160" r="3" />
+        <circle cx="470" cy="60" r="3" />
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- =========================================================
      ENCABEZADO
      ========================================================= -->
@@ -70,7 +99,15 @@
 <!-- =========================================================
      INICIO
      ========================================================= -->
-<section id="inicio" class="max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+<section id="inicio" class="relative overflow-hidden">
+  <!-- Fondo decorativo -->
+  <div class="bg-deco" aria-hidden="true">
+    <div class="dot-grid absolute inset-0"></div>
+    <svg class="circuit absolute -right-40 -top-6 w-[720px] text-brand opacity-25 hidden md:block"><use href="#circuit" /></svg>
+    <span class="glyph absolute right-[4%] bottom-4 text-[4rem] md:text-[7rem]">&lt;/&gt;</span>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-24 md:pb-28">
   <div class="grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-center">
 
     <div>
@@ -116,13 +153,30 @@
       </p>
     </div>
   </div>
+</div>
 </section>
 
 <!-- =========================================================
      PROYECTOS
      ========================================================= -->
-<section id="proyectos" class="border-t border-line">
-  <div class="max-w-6xl mx-auto px-5 py-20">
+<section id="proyectos" class="relative overflow-hidden border-t border-line">
+  <div class="bg-deco" aria-hidden="true">
+    <!-- Ventana de terminal (escritorio) -->
+    <svg class="terminal absolute right-[4%] top-8 w-[280px] text-brand opacity-30 hidden md:block" viewBox="0 0 340 220"
+         fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <rect x="1" y="1" width="338" height="218" rx="12" />
+      <path d="M1 34 H339" />
+      <circle cx="20" cy="17" r="4" /><circle cx="36" cy="17" r="4" /><circle cx="52" cy="17" r="4" />
+      <path d="M24 64 l10 8 l-10 8" />
+      <path d="M46 72 H160" />
+      <path d="M24 104 H210 M24 128 H120 M138 128 H250 M24 152 H180" />
+      <path d="M24 180 l10 8 l-10 8" />
+      <rect class="caret" x="46" y="179" width="10" height="17" fill="currentColor" stroke="none" />
+    </svg>
+    <!-- Llaves de código (celular) -->
+    <span class="glyph glyph-slow absolute right-[3%] top-10 text-[5rem] md:hidden">{ }</span>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20">
     <div class="reveal max-w-2xl mb-12">
       <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-3">Proyectos</h2>
       <p class="text-muted">Sistemas para uso real, sitios publicados y proyectos propios.</p>
@@ -244,8 +298,22 @@
 <!-- =========================================================
      SERVICIOS
      ========================================================= -->
-<section id="servicios" class="border-t border-line bg-panel/40">
-  <div class="max-w-6xl mx-auto px-5 py-20">
+<section id="servicios" class="relative overflow-hidden border-t border-line bg-panel/40">
+  <div class="bg-deco" aria-hidden="true">
+    <div class="line-grid absolute inset-0"></div>
+    <!-- Red de nodos conectados -->
+    <svg class="network absolute right-[3%] top-12 w-[380px] text-brand opacity-35 hidden lg:block" viewBox="0 0 380 240"
+         fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M40 60 L150 30 L260 80 L340 40 M40 60 L120 150 L260 80 M120 150 L230 190 L260 80 M230 190 L330 170 L340 40 M260 80 L330 170" />
+      <g fill="var(--color-ink)" stroke-width="1.5">
+        <circle cx="40" cy="60" r="5" /><circle cx="150" cy="30" r="5" /><circle cx="340" cy="40" r="5" />
+        <circle cx="120" cy="150" r="5" /><circle cx="230" cy="190" r="5" /><circle cx="330" cy="170" r="5" />
+      </g>
+      <circle class="node-pulse" cx="260" cy="80" r="14" />
+      <circle cx="260" cy="80" r="7" fill="currentColor" stroke="none" />
+    </svg>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20">
     <div class="reveal max-w-2xl mb-12">
       <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-3">Servicios y precios</h2>
       <p class="text-muted">
@@ -389,8 +457,29 @@
 <!-- =========================================================
      SOBRE MÍ + HABILIDADES
      ========================================================= -->
-<section id="sobre-mi" class="border-t border-line">
-  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+<section id="sobre-mi" class="relative overflow-hidden border-t border-line">
+  <div class="bg-deco" aria-hidden="true">
+    <!-- Código binario que se desvanece (escritorio) -->
+    <pre class="binary absolute right-0 bottom-0 hidden md:block">10100010 00011000 10000100 00110010 00100001
+11111100 00111110 01010110 01111100 11001111
+10110010 01001110 01110111 11000000 00101100
+11100111 11011000 01001000 00100010 11110011
+11100011 10001001 01101010 00100110 01110111
+10000101 01011001 01011011 10000001 01100000
+01000101 01110011 10001000 00100110 00010010
+01101110 10101011 10010010 01010100 11000111
+10110101 11011100 00011001 01110110 10010100
+10001010 11100000 10001101 10110100 00101011
+11001001 10000110 00110101 00110111 10010100
+11011000 01001010 11000111 01001000 00001011
+00011010 00110100 01110110 00011100 10110011
+11110010 10110111 00000110 10101110 00111101
+11101011 10001110 11011101 00100111 01101000
+11011000 11111111 01110000 01011110 00001010</pre>
+    <!-- 01 en contorno (celular) -->
+    <span class="glyph glyph-slow absolute right-[3%] bottom-8 text-[4rem] md:hidden">01</span>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
 
     <div class="reveal">
       <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-6">Sobre mí</h2>
@@ -450,8 +539,23 @@
 <!-- =========================================================
      EXPERIENCIA + FORMACIÓN
      ========================================================= -->
-<section id="experiencia" class="border-t border-line bg-panel/40">
-  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+<section id="experiencia" class="relative overflow-hidden border-t border-line bg-panel/40">
+  <div class="bg-deco" aria-hidden="true">
+    <div class="dot-grid dot-grid-left absolute inset-0"></div>
+    <!-- Ramas de Git (escritorio) -->
+    <svg class="git-graph absolute right-[5%] bottom-12 w-[300px] text-brand opacity-35 hidden lg:block" viewBox="0 0 300 220"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path class="draw" d="M40 10 V210" />
+      <path class="draw draw-2" d="M40 45 C40 75 130 65 130 95 V125 C130 160 40 150 40 180" />
+      <path class="draw draw-3" d="M130 95 C130 115 220 105 220 125 V140" />
+      <g fill="var(--color-panel)" stroke-width="2">
+        <circle cx="40" cy="20" r="6" /><circle cx="40" cy="45" r="6" /><circle cx="40" cy="115" r="6" />
+        <circle cx="130" cy="95" r="6" /><circle cx="130" cy="125" r="6" /><circle cx="220" cy="140" r="6" />
+      </g>
+      <circle cx="40" cy="180" r="7" fill="currentColor" stroke="none" />
+    </svg>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
 
     <!-- Experiencia -->
     <div>
@@ -537,8 +641,20 @@
 <!-- =========================================================
      CONTACTO
      ========================================================= -->
-<section id="contacto" class="border-t border-line">
-  <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
+<section id="contacto" class="relative overflow-hidden border-t border-line">
+  <div class="bg-deco" aria-hidden="true">
+    <div class="dot-grid absolute inset-0"></div>
+    <!-- Ondas de señal saliendo de la esquina -->
+    <svg class="waves absolute left-0 bottom-0 w-[460px] text-brand hidden md:block" viewBox="0 0 460 460" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="0" cy="460" r="90" opacity="0.30" />
+      <circle cx="0" cy="460" r="170" opacity="0.22" />
+      <circle cx="0" cy="460" r="250" opacity="0.15" />
+      <circle cx="0" cy="460" r="330" opacity="0.10" />
+      <circle cx="0" cy="460" r="410" opacity="0.06" />
+      <circle class="wave-pulse" cx="0" cy="460" r="410" />
+    </svg>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14">
 
     <div class="reveal">
       <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">¿Tienes un proyecto en mente?</h2>

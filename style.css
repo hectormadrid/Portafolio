@@ -142,3 +142,120 @@
   .js .timeline-line { transform: none; }
   .lift:hover { translate: none; }
 }
+
+
+/* ---------------------------------------------------------
+   6. FONDOS DECORATIVOS (motivos de informática)
+   Van detrás del contenido, no reciben clics y son muy suaves
+   para no competir con el texto.
+   --------------------------------------------------------- */
+.bg-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 6.1 Grilla de puntos, que se desvanece hacia los bordes */
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-fg) 16%, transparent) 1px, transparent 1.3px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse 65% 70% at 75% 35%, #000 20%, transparent 75%);
+}
+.dot-grid-left {
+  mask-image: radial-gradient(ellipse 55% 70% at 15% 60%, #000 10%, transparent 70%);
+}
+
+/* 6.2 Grilla de líneas, como papel cuadriculado de ingeniería */
+.line-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-fg) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-fg) 6%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+
+/* 6.3 Circuito: altura proporcional al ancho y señales que lo recorren */
+.circuit { aspect-ratio: 3 / 2; }
+.circuit .signal {
+  stroke-width: 2.5;
+  stroke-dasharray: 36 640;
+  stroke-dashoffset: 676;
+  opacity: 0.9;
+  animation: signal 5s linear infinite;
+}
+.circuit .signal-2 { animation-delay: 2.5s; }
+@keyframes signal { to { stroke-dashoffset: 0; } }
+
+/* 6.4 Símbolos de código en contorno ( </> { } ; ) que flotan lento */
+.glyph {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-brand) 28%, transparent);
+  animation: float 9s ease-in-out infinite;
+}
+.glyph-slow { animation-duration: 13s; }
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glyph, .circuit .signal { animation: none; }
+  .circuit .signal { opacity: 0; }
+}
+
+/* 6.5 Terminal: el cursor parpadea */
+.terminal .caret { animation: caret 1.1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+
+/* 6.6 Red de nodos: el nodo central emite un pulso */
+.network .node-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-pulse 2.6s ease-out infinite;
+}
+@keyframes node-pulse {
+  from { transform: scale(0.5); opacity: 0.9; }
+  to   { transform: scale(2.2); opacity: 0; }
+}
+
+/* 6.7 Código binario: texto tenue que se desvanece hacia arriba y la izquierda */
+.binary {
+  margin: 0;
+  padding: 1.5rem;
+  font: 600 13px/1.9 ui-monospace, "Cascadia Code", Consolas, monospace;
+  letter-spacing: 0.25em;
+  color: color-mix(in srgb, var(--color-brand) 16%, transparent);
+  mask-image: linear-gradient(to left, #000 10%, transparent 85%), linear-gradient(to top, #000 30%, transparent);
+  mask-composite: intersect;
+}
+
+/* 6.8 Ramas de Git: las líneas se dibujan al entrar en pantalla */
+.js .git-graph .draw {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 1.6s ease;
+}
+.js .git-graph .draw-2 { transition-delay: 0.4s; }
+.js .git-graph .draw-3 { transition-delay: 0.9s; }
+.js .git-graph.is-visible .draw { stroke-dashoffset: 0; }
+
+/* 6.9 Ondas de señal: un anillo se expande cada pocos segundos */
+.waves .wave-pulse {
+  transform-box: view-box;
+  transform-origin: 0 100%;
+  animation: wave 4.5s ease-out infinite;
+}
+@keyframes wave {
+  from { transform: scale(0.15); opacity: 0.5; }
+  to   { transform: scale(1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal .caret, .network .node-pulse, .waves .wave-pulse { animation: none; }
+  .network .node-pulse, .waves .wave-pulse { opacity: 0; }
+  .js .git-graph .draw { stroke-dashoffset: 0; transition: none; }
+}
