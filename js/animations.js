@@ -19,6 +19,24 @@ export function initAnimations() {
     targets.forEach(el => observer.observe(el));
   }
 
+  // Botón flotante de WhatsApp
+  const waButton = document.getElementById('wa-float');
+  const contact = document.getElementById('contacto');
+  if (waButton) {
+    // Cuando termina su animación de entrada, queda listo para mostrarse/ocultarse rápido
+    waButton.addEventListener('animationend', (event) => {
+      if (event.animationName === 'wa-in') waButton.classList.add('is-shown');
+    });
+    if (reduceMotion) waButton.classList.add('is-shown');
+
+    // Se oculta cuando Contacto ya ocupa la mitad inferior de la pantalla
+    if (contact && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        waButton.classList.toggle('is-hidden', entry.isIntersecting);
+      }, { rootMargin: '0px 0px -50% 0px' }).observe(contact);
+    }
+  }
+
   // Sombra en el encabezado cuando la página ya bajó
   const header = document.getElementById('site-header');
   if (!header) return;
