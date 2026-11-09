@@ -315,3 +315,21 @@
   .wa-float { animation: none; opacity: 1; translate: 0 0; }
   .wa-float::after { animation: none; }
 }
+
+
+/* ---------------------------------------------------------
+   8. CAPTURAS DE PROYECTOS
+   Al pasar el mouse se acercan un poco; al hacer clic se abren en grande.
+   --------------------------------------------------------- */
+.shot {
+  transition: translate 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: zoom-in;
+}
+.shot:hover {
+  translate: 0 -4px;
+  border-color: color-mix(in srgb, var(--color-brand) 55%, var(--color-line));
+  box-shadow: 0 24px 50px -20px rgb(0 0 0 / 0.8);
+}
+@media (prefers-reduced-motion: reduce) {
+  .shot:hover { translate: none; }
+}

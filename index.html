@@ -192,30 +192,120 @@
       <p class="text-muted">Sistemas para uso real, sitios publicados y proyectos propios.</p>
     </div>
 
-    <!-- Proyecto principal: sistema de inventario -->
-    <article class="reveal lift bg-panel border border-line rounded-lg p-7 md:p-9 mb-6 grid lg:grid-cols-[1.3fr_1fr] gap-8">
-      <div class="flex flex-col">
+    <!-- Proyecto principal: sistema de inventario (con capturas) -->
+    <article class="reveal lift bg-panel border border-line rounded-lg overflow-hidden mb-6 grid lg:grid-cols-[1fr_1.3fr]">
+      <div class="p-7 md:p-9 flex flex-col">
         <div class="flex flex-wrap items-center gap-3 mb-3">
           <h3 class="font-display font-bold text-2xl md:text-3xl">Sistema de inventario TI escolar</h3>
           <span class="text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
         </div>
-        <p class="text-muted leading-relaxed mb-5">
-          Sistema para el Colegio Jesús Andino que controla los equipos de la sala de computación: cada equipo
-          tiene su código, se registra a qué funcionario se presta o asigna, cuándo vuelve y qué insumos se usan.
-          Todo queda en un historial.
+        <p class="text-muted leading-relaxed mb-6">
+          Sistema para el Colegio Jesús Andino que controla los equipos e insumos de la sala de computación:
+          préstamos y asignaciones a funcionarios, stock con avisos, solicitudes, informes en PDF y un historial
+          de todos los movimientos.
         </p>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm mb-6">
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Equipos con código y estado</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Préstamos y asignaciones</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Stock de insumos</li>
+          <li class="flex gap-2"><span class="text-brand" aria-hidden="true">✓</span>Dashboard e informes PDF</li>
+        </ul>
         <p class="text-sm text-muted mt-auto">React, Node.js, Express, Supabase (PostgreSQL)</p>
       </div>
-      <ul class="grid grid-cols-2 gap-3 self-center text-sm">
-        <li class="border border-line rounded-md p-4"><p class="font-semibold">Equipos</p><p class="text-muted">Código EQ-0001 y estado</p></li>
-        <li class="border border-line rounded-md p-4"><p class="font-semibold">Préstamos</p><p class="text-muted">Con fecha de devolución</p></li>
-        <li class="border border-line rounded-md p-4"><p class="font-semibold">Funcionarios</p><p class="text-muted">Profesores y administrativos</p></li>
-        <li class="border border-line rounded-md p-4"><p class="font-semibold">Reportes</p><p class="text-muted">Con roles de acceso</p></li>
-      </ul>
+
+      <!-- Capturas: dashboard + login superpuesto -->
+      <div class="bg-ink/50 border-t lg:border-t-0 lg:border-l border-line p-5 sm:p-8 flex items-center">
+       <div class="relative w-full sm:pb-[16%]">
+        <a href="img/proyectos/inventario-dashboard.webp" target="_blank" rel="noopener"
+           class="shot block w-full sm:w-[90%] sm:ml-auto rounded-md overflow-hidden border border-line shadow-2xl"
+           aria-label="Ver captura del dashboard del inventario en grande">
+          <span class="flex items-center gap-1.5 px-3 py-2 bg-[#2e2e46]" aria-hidden="true">
+            <span class="w-2 h-2 rounded-full bg-[#ff6b5f]"></span><span class="w-2 h-2 rounded-full bg-[#ffc23d]"></span><span class="w-2 h-2 rounded-full bg-[#3ccd5a]"></span>
+          </span>
+          <img src="img/proyectos/inventario-dashboard.webp" width="1400" height="606" loading="lazy" decoding="async"
+               alt="Dashboard del inventario: totales de equipos, insumos, solicitudes y préstamos, con gráficos por estado y por tipo" class="w-full h-auto" />
+        </a>
+        <a href="img/proyectos/inventario-login.webp" target="_blank" rel="noopener"
+           class="shot hidden sm:block absolute left-0 bottom-0 w-[44%] rounded-md overflow-hidden border border-line shadow-2xl"
+           aria-label="Ver captura del inicio de sesión del inventario en grande">
+          <img src="img/proyectos/inventario-login.webp" width="900" height="427" loading="lazy" decoding="async"
+               alt="Pantalla de inicio de sesión del inventario con los colores del colegio" class="w-full h-auto" />
+        </a>
+       </div>
+      </div>
+
+      <!-- Galería: más pantallas del sistema (datos personales difuminados) -->
+      <div class="lg:col-span-2 border-t border-line px-5 sm:px-8 py-6">
+        <p class="text-sm text-muted mb-4">Más pantallas del sistema. Los datos personales están difuminados.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="img/proyectos/inventario-equipos.webp" target="_blank" rel="noopener"
+             class="shot block rounded-md overflow-hidden border border-line bg-ink" aria-label="Ver captura de Equipos en grande">
+            <img src="img/proyectos/inventario-equipos.webp" width="1400" height="652" loading="lazy" decoding="async"
+                 alt="Tabla de equipos con código, tipo, marca, estado y ubicación" class="w-full aspect-[16/9] object-cover object-left-top" />
+            <span class="block px-3 py-2 text-xs text-muted border-t border-line">Equipos</span>
+          </a>
+          <a href="img/proyectos/inventario-insumos.webp" target="_blank" rel="noopener"
+             class="shot block rounded-md overflow-hidden border border-line bg-ink" aria-label="Ver captura de Insumos en grande">
+            <img src="img/proyectos/inventario-insumos.webp" width="1400" height="648" loading="lazy" decoding="async"
+                 alt="Tabla de insumos con categoría, stock y stock mínimo" class="w-full aspect-[16/9] object-cover object-left-top" />
+            <span class="block px-3 py-2 text-xs text-muted border-t border-line">Insumos</span>
+          </a>
+          <a href="img/proyectos/inventario-movimientos.webp" target="_blank" rel="noopener"
+             class="shot block rounded-md overflow-hidden border border-line bg-ink" aria-label="Ver captura de Movimientos en grande">
+            <img src="img/proyectos/inventario-movimientos.webp" width="1400" height="618" loading="lazy" decoding="async"
+                 alt="Tabla de movimientos: préstamos, asignaciones, entradas y salidas" class="w-full aspect-[16/9] object-cover object-left-top" />
+            <span class="block px-3 py-2 text-xs text-muted border-t border-line">Movimientos</span>
+          </a>
+        </div>
+      </div>
     </article>
 
-    <!-- Proyectos destacados -->
-    <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <!-- Habitosapp (con captura, imagen a la izquierda) -->
+    <article class="reveal lift bg-panel border border-line rounded-lg overflow-hidden mb-6 grid lg:grid-cols-[1.1fr_1fr]">
+      <div class="order-2 lg:order-1 relative bg-ink/50 border-t lg:border-t-0 lg:border-r border-line p-5 sm:p-8 flex items-center">
+        <a href="img/proyectos/habitosapp-habitos.webp" target="_blank" rel="noopener"
+           class="shot block w-full rounded-md overflow-hidden border border-line shadow-2xl"
+           aria-label="Ver captura de Habitosapp en grande">
+          <img src="img/proyectos/habitosapp-habitos.webp" width="810" height="560" loading="lazy" decoding="async"
+               alt="Pantalla de hábitos de Habitosapp: hábitos del día, mejor racha, progreso semanal y tabla de la semana" class="w-full h-auto" />
+        </a>
+      </div>
+      <div class="order-1 lg:order-2 p-7 md:p-9 flex flex-col justify-center">
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <h3 class="font-display font-bold text-2xl md:text-3xl">Habitosapp</h3>
+          <span class="text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-6">
+          Aplicación para organizar el día: tareas en lista o tablero, hábitos con rachas y progreso semanal,
+          estadísticas, calendario y un temporizador Pomodoro.
+        </p>
+        <p class="text-sm text-muted mb-6">React, Node.js, CSS</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="https://habitosapp-eta.vercel.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver sitio</a>
+          <a href="https://github.com/hectormadrid/Habitosapp" target="_blank" rel="noopener" class="text-muted hover:text-fg">Ver código</a>
+        </div>
+      </div>
+      <!-- Galería: más pantallas de la app -->
+      <div class="order-3 lg:col-span-2 border-t border-line px-5 sm:px-8 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="img/proyectos/habitosapp-tablero.webp" target="_blank" rel="noopener"
+             class="shot block rounded-md overflow-hidden border border-line bg-ink" aria-label="Ver captura de Tablero de tareas en grande">
+            <img src="img/proyectos/habitosapp-tablero.webp" width="1130" height="710" loading="lazy" decoding="async"
+                 alt="Tablero de tareas en tres columnas: por hacer, en progreso y completado" class="w-full aspect-[16/9] object-cover object-left-top" />
+            <span class="block px-3 py-2 text-xs text-muted border-t border-line">Tablero de tareas</span>
+          </a>
+          <a href="img/proyectos/habitosapp-pomodoro.webp" target="_blank" rel="noopener"
+             class="shot block rounded-md overflow-hidden border border-line bg-ink" aria-label="Ver captura de Pomodoro en grande">
+            <img src="img/proyectos/habitosapp-pomodoro.webp" width="800" height="405" loading="lazy" decoding="async"
+                 alt="Temporizador Pomodoro de 25 minutos" class="w-full aspect-[16/9] object-cover object-left-top" />
+            <span class="block px-3 py-2 text-xs text-muted border-t border-line">Pomodoro</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Otros proyectos destacados -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
 
       <article style="--d:0ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
         <div class="flex items-start justify-between gap-4 mb-3">
@@ -246,7 +336,7 @@
         </div>
       </article>
 
-      <article style="--d:0ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
+      <article style="--d:200ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
         <div class="flex items-start justify-between gap-4 mb-3">
           <h3 class="font-display font-bold text-2xl">Mundo Librería</h3>
           <span class="shrink-0 text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
@@ -258,21 +348,6 @@
         <p class="text-sm text-muted mb-6">PHP, MySQL, JavaScript, Tailwind CSS</p>
         <div class="flex gap-5 text-sm font-semibold">
           <a href="https://github.com/hectormadrid/Mundo-Libreria" target="_blank" rel="noopener" class="text-brand hover:underline">Ver código</a>
-        </div>
-      </article>
-
-      <article style="--d:100ms" class="reveal lift bg-panel border border-line rounded-lg p-7 flex flex-col">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <h3 class="font-display font-bold text-2xl">Habitosapp</h3>
-          <span class="shrink-0 text-xs font-semibold text-amber-300 border border-amber-300/40 rounded px-2 py-1">En desarrollo</span>
-        </div>
-        <p class="text-muted leading-relaxed mb-5 flex-grow">
-          Aplicación para organizar rutinas y tareas, con una vista mensual de los hábitos cumplidos.
-        </p>
-        <p class="text-sm text-muted mb-6">React, Node.js, CSS</p>
-        <div class="flex gap-5 text-sm font-semibold">
-          <a href="https://habitosapp-eta.vercel.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver sitio</a>
-          <a href="https://github.com/hectormadrid/Habitosapp" target="_blank" rel="noopener" class="text-muted hover:text-fg">Ver código</a>
         </div>
       </article>
     </div>
